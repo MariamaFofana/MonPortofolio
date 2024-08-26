@@ -1,0 +1,98 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+:root{
+  --Arriere:#c7b055;
+  --PrimaryColor:#ffffff;
+  --gradientColor:linear-gradient(to-right, hsl(187,85¨%,43%),hsl(182,25%,50%));
+  --or1:	#b37b00;
+  --or2: #bf8600;
+  --or3: #cb9000;
+  --or4:#fcba3a;
+  --black1:#000000 ;
+  --black2:#453312;
+  --black3:#261d0d ;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather', serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+.icon{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgba(255,255,255,0.3);
+  color:#b37b00;
+  transition: 0.5s;
+}
+.icon:hover{
+  cursor: pointer;
+  background-color: #b37b00;
+  color: var(--PrimaryColor);
+}
+.flexSB{
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  list-style: none;
+}
+button{
+  border: none;
+}
+p{
+  padding: 0 10px;
+  margin: 10px 0;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}

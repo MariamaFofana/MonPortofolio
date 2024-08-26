@@ -1,0 +1,335 @@
+:root {
+  --background-color: #c7b055;
+  --primary-color: #ffffff;
+  --gradient-color: linear-gradient(to-right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
+  --gold-light: #b37b00;
+  --gold-medium: #bf8600;
+  --gold-dark: #cb9000;
+  --gold-bright: #fcba3a;
+  --black-dark: #000000;
+  --black-medium: #453312;
+  --black-light: #261d0d;
+  --accent-color: #f29309;
+}
+
+/* Style pour le conteneur principal */
+.container-wrapper {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--primary-color);
+}
+
+/* Style pour le conteneur des onglets et du contenu */
+.container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style pour le conteneur des onglets */
+.tabs-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Style pour la liste des onglets */
+.tabs-list {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 24px;
+  padding: 1rem;
+  background: var(--primary-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le conteneur de contenu */
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  padding-left: 20px;
+}
+
+/* Style pour le contenu des onglets */
+.tabs-content {
+  width: 100%;
+}
+
+/* Style pour la section d'expérience */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.experience-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black-dark);
+}
+
+.experience-description {
+  max-width: 600px;
+  color: var(--black-medium);
+  margin: 0 auto;
+}
+
+.scroll-area {
+  height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Grille pour la liste d'expérience */
+.experience-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 1024px) {
+  .experience-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Style pour les éléments d'expérience */
+.experience-item {
+  background-color: var(--primary-color);
+  height: 184px;
+  padding: 24px 40px;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-duration {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.experience-position {
+  font-size: 1.25rem;
+  max-width: 260px;
+  min-height: 60px;
+  text-align: center;
+  color: var(--black-dark);
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.company-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.company-name {
+  color: var(--gold-bright);
+}
+
+/* Style pour la section de formation */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.education-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black-dark);
+}
+
+.education-description {
+  max-width: 600px;
+  color: var(--black-medium);
+  margin: 0 auto;
+}
+
+/* Grille pour la liste de formation */
+.education-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 1024px) {
+  .education-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Style pour les éléments de formation */
+.education-item {
+  background-color: var(--primary-color);
+  height: 184px;
+  padding: 24px 40px;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-duration {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.education-diplome {
+  font-size: 1.25rem;
+  max-width: 260px;
+  min-height: 60px;
+  text-align: center;
+  color: var(--black-dark);
+}
+
+.education-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.education-ecole {
+  font-weight: bold;
+  color: var(--black-dark);
+}
+
+.education-specialite {
+  color: var(--black-medium);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto);  
+  gap: 10px; 
+  background-color: #c1af86;
+  padding: 10px;
+}
+.about-list {
+  list-style: none; 
+  display: contents; 
+}
+.about-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-fieldName {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.about-fieldValue {
+  margin: 0;
+  font-size: 12px;
+}
+/* Section Skills */
+.skills-container {
+  padding: 1rem;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black-dark);
+}
+
+.skills-description {
+  max-width: 600px;
+  color: var(--black-medium);
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Grille réactive avec des colonnes adaptatives */
+  gap: 20px;
+}
+
+.skills-item {
+  background-color: var(--primary-color);
+  border: 1px solid var(--black-medium);
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills-name {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--black-dark);
+}
+/* Section Association */
+.association-container {
+  padding: 1rem;
+}
+
+.association-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black-dark);
+}
+
+.association-description {
+  max-width: 600px;
+  color: var(--black-medium);
+  margin: 0 auto;
+}
+
+.association-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+}
+
+.association-item {
+  background-color: var(--primary-color);
+  border: 1px solid var(--black-medium);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.association-position {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.association-nom {
+  font-size: 1rem;
+}
+
+.association-lieu, .association-duration, .association-role {
+  color: var(--black-medium);
+  font-size: 12px;
+}

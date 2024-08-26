@@ -1,0 +1,77 @@
+:root {
+  --Arriere: #c7b055;
+  --PrimaryColor: #ffffff;
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
+  --or1: #b37b00;
+  --or4: #fcba3a;
+  --black1: #000000;
+  --black2: #453312;
+  --black3: #261d0d;
+}
+
+.footer {
+  background: rgba(221, 214, 179, 0.664);
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: "Lobster", cursive;
+}
+
+.follows {
+  margin-top: 1rem;
+}
+
+.follows a {
+  text-decoration: none;
+  color: #f5bc10;
+  margin: 0 10px;
+}
+
+.follows i {
+  font-size: 2rem;
+}
+
+.follows a:hover,
+.links a:hover {
+  color: var(--black1);
+}
+
+.Link_list a {
+  text-decoration: none;
+  color: #2b260a;
+  font-weight: 500;
+  padding-left: 15px;
+}
+
+.quick a:hover {
+  color: var(--black1);
+}
+
+.contact h6 {
+  color: var(--or2);
+  font-size: 1rem;
+  line-height: 50px;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 600;
+}
+
+.contact p {
+  color: var(--black1);
+  font-size: 1rem;
+  line-height: 35px;
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 400;
+}
+
+.final {
+  border-radius: 15px;
+  background-color: var(--or1);
+}
+  

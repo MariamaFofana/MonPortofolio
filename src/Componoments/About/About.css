@@ -1,0 +1,96 @@
+:root {
+  --background-color: #c7b055;
+  --primary-color: #ffffff;
+  --gradient-color: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(182, 25%, 50%)
+  );
+  --gold1: #fbf7ee;
+  --gold2: #bf8600;
+  --gold3: #cb9000;
+  --gold4: #fcba3a;
+  --black1: #000000;
+  --black2: #453312;
+  --black3: #261d0d;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--gold1);
+  padding: 3rem 2rem;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  display: inline-block; /* Pour ajuster le conteneur à la taille de l'image */
+  padding: 10px; /* Optionnel : espace entre l'image et la bordure */
+  border: 5px solid rgb(245, 181, 5); /* Définit une bordure solide de 5px en jaune */
+  box-sizing: border-box; 
+}
+
+.image {
+  width: 35vw;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+  max-width: 100%; 
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.about-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content h2 {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.about-content h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 0.6rem;
+  margin: 1rem 0 1rem;
+}
+
+.btnAbout {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--gold3);
+  color: var(--primary-color);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btnAbout:hover {
+  background-color: var(--gold4);
+}
