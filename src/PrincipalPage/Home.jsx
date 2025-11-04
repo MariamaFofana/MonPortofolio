@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../Componoments/Navbar/Navbar';
-import Footer from '../Componoments/Footer/Footer';
-import Contact from '../Componoments/Contact/Contact';
-import Header from '../Componoments/Header/Header';
-import About from '../Componoments/About/About';
-import CVitae from '../Componoments/CVitae/CVitae';
-import Projets from '../Componoments/Projets/Projets';
+import Navbar from '../Components/Navbar/Navbar';
+import Footer from '../Components/Footer/Footer';
+import Contact from '../Components/Contact/Contact';
+import Header from '../Components/Header/Header';
+import About from '../Components/About/About';
+import CVitae from '../Components/CVitae/CVitae';
+import Projets from '../Components/Projets/Projets';
 
 const Home = () => {
   return (

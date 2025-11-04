@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Portfolio de Mariama Fofana
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Portfolio Banner](./src/IMAGES/Fofana%20Mariama.png)
 
-## Available Scripts
+Bienvenue sur mon portfolio ! 💻  
+Vous trouverez ici mes projets de développement, réalisés principalement en **React.js**, ainsi que mes travaux en **C++**, **Java**, **Python** et autres technologies.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Table of Contents
+- [About Me](#about-me)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Projects](#projects)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About Me
 
-### `npm test`
+Je suis étudiante en Ingénierie Informatique à CESI Lyon, section anglophone, spécialisée en **Data Science & Intelligence Artificielle**.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Mes compétences incluent :  
+- Algorithmique avancée  
+- Statistiques et probabilités  
+- Big Data et Machine Learning  
+- Intégration d’IA dans des applications  
 
-### `npm run build`
+Je suis passionnée par le développement et l'analyse de données, et je cherche à appliquer mes compétences à des projets concrets et innovants.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+## Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [React.js](https://reactjs.org/)  
+- HTML5 / CSS3 / JavaScript    
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📂 Organisation du projet
 
-### `npm run eject`
+Mon portfolio est construit en **React.js** avec une architecture claire et modulaire :  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+src/
+│
+├─ components/ # Tous les composants du portfolio
+│ ├─ About/ # Section "À propos"
+│ ├─ Contact/ # Section "Contact"
+│ ├─ Accueil/ # Section d'accueil / Hero
+│ ├─ CVitae/ # CV interactif
+│ ├─ Footer/ # Pied de page
+│ ├─ Header/ # En-tête
+│ ├─ Navbar/ # Barre de navigation
+│ └─ Projets/ # Liste de projets
+│
+├─ IMAGES/ # Toutes les images utilisées
+├─ FICHIER/ # Fichiers à charger dans le portfolio (CV, documents)
+├─ PrincipalPage/ # Page principale (Home.jsx)
+├─ App.js
+├─ index.js
+├─ App.css
+└─ index.css
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📂 Composants principaux
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Composant      | Description |
+|----------------|-------------|
+| `Navbar`       | Barre de navigation avec liens vers chaque section |
+| `Header`       | Bannière d’accueil avec présentation rapide |
+| `Accueil`      | Section “Hero” / Accueil |
+| `About`        | Section “À propos de moi” |
+| `Projets`      | Liste de projets avec descriptions et liens GitHub |
+| `CVitae`       | CV interactif ou téléchargeable |
+| `Contact`      | Formulaire de contact et liens réseaux |
+| `Footer`       | Pied de page avec mentions et liens |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pour lancer ce portfolio localement :  
 
-### Code Splitting
+### Prérequis
+- Node.js et npm installés sur votre machine  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Installation
+```bash
+# Cloner le dépôt
+git clone https://github.com/tonpseudo/monportofolio.git
 
-### Analyzing the Bundle Size
+# Aller dans le dossier du projet
+cd monportofolio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Installer les dépendances
+npm install
 
-### Making a Progressive Web App
+# Lancer le projet
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📂 Mes projets
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Voici une sélection de mes projets les plus représentatifs. Pour découvrir tous mes travaux, consultez la section **Projets** de mon portfolio ou mes dépôts GitHub.
 
-### Deployment
+### 1. [AirWatcher – Application React MVC](https://github.com/Alexandre-69/Projet-UML-AirWatcher)
+- **Technologies :** React.js, JavaScript, CSS, MVC, API capteurs  
+- **Description :** Application de suivi de la qualité de l’air avec visualisation des données et statistiques.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 2. [Gestion de trajets – C++](https://github.com/LisaQuantin/CPP_TP4)
+- **Technologies :** C++, POO, listes chaînées  
+- **Description :** Gestion de trajets simples et composés, manipulation de listes chaînées et tests unitaires.
 
-### `npm run build` fails to minify
+### 3. [Pierre-Feuille-Ciseau – HTML/CSS/JS](https://github.com/MariamaFofana/PierreFeuilleCiseau)
+- **Technologies :** HTML, CSS, JavaScript  
+- **Description :** Jeu interactif avec animations et interface utilisateur responsive.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Pour voir tous mes projets et démos, rendez-vous dans la rubrique [Projets](#projects) de mon portfolio.**
+
+---
+## 📫 Contact
+
+- LinkedIn : [Mariama Fofana](https://www.linkedin.com/in/m-fofana/)  
+- Email : mariamafof9@gmail.com  
+- GitHub : [MariamaFofana](https://github.com/MariamaFofana)
+
+## Acknowledgments
+
+- [Font Awesome](https://fontawesome.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Canva](https://www.canva.com/)

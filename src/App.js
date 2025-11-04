@@ -3,11 +3,12 @@ import { Route, Routes } from "react-router-dom"
 
 /*------------Page d'accueil----------------*/
 import Home from './PrincipalPage/Home.jsx';
-import Contact from './Componoments/Contact/Contact.jsx';
-import Projets from './Componoments/Projets/Projets.jsx';
-import About from './Componoments/About/About.jsx';
-import CVitae from './Componoments/CVitae/CVitae.jsx';
-import Navbar from './Componoments/Navbar/Navbar.jsx';
+
+import Navbar from '../src/Components/Navbar/Navbar';
+import Contact from '../src/Components/Contact/Contact.jsx';
+import About from '../src/Components/About/About.jsx';
+import CVitae from '../src/Components/CVitae/CVitae.jsx';
+import Projets from '../src/Components/Projets/Projets.jsx';
 
 function App() {
   return (        
