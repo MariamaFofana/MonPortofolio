@@ -31,7 +31,7 @@ const CVitae = () => {
           </TabsList>
 
           <div className="content-container">
-            {/* Experience */}
+            {/* =======================================EXPÉRIENCES================================== */}
             <TabsContent value="experience" className="tabs-content">
               <div className="experience-container">
                 <h3 className="experience-title">{experience.title}</h3>
@@ -50,13 +50,22 @@ const CVitae = () => {
                           <span className="company-dot"></span>
                           <p className="company-name">{item.company}</p>
                         </div>
+                        {item.description && (
+                          <p className="experience-description-item">
+                            {item.description}
+                          </p>
+                        )}
+                        {item.location && (
+                          <p className="experience-location">{item.location}</p>
+                        )}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </TabsContent>
-            {/* Formations */}
+
+            {/* =======================================FORMATIONS =======================================*/}
             <TabsContent value="education" className="tabs-content">
               <div className="education-container">
                 <h3 className="education-title">{education.title}</h3>
@@ -74,6 +83,16 @@ const CVitae = () => {
                           <p className="education-specialite">
                             {item.specialite}
                           </p>
+                          {item.description && (
+                            <p className="education-description-item">
+                              {item.description}
+                            </p>
+                          )}
+                          {item.location && (
+                            <p className="education-location">
+                              {item.location}
+                            </p>
+                          )}
                         </div>
                       </li>
                     ))}
@@ -81,11 +100,14 @@ const CVitae = () => {
                 </div>
               </div>
             </TabsContent>
-            {/* Association */}
+
+            {/*=======================================ASSOCIATIONS=======================================*/}
             <TabsContent value="association" className="tabs-content">
               <div className="association-container">
                 <h3 className="association-title">{association.title}</h3>
-                <p className="association-description">{association.description}</p>
+                <p className="association-description">
+                  {association.description}
+                </p>
                 <div className="association-grid">
                   {association.items.map((item, index) => (
                     <div key={index} className="association-item">
@@ -99,22 +121,33 @@ const CVitae = () => {
                 </div>
               </div>
             </TabsContent>
-            {/* Skills */}
+
+            {/* =======================================COMPÉTENCES =======================================*/}
             <TabsContent value="skills" className="tabs-content">
               <div className="skills-container">
                 <h3 className="skills-title">{skills.title}</h3>
                 <p className="skills-description">{skills.description}</p>
-                <div className="skills-grid">
-                  {skills.skillList.map((skill, index) => (
-                    <div key={index} className="skills-item">
-                      {skill.icon}
-                      <p className="skills-name">{skill.name}</p>
+
+                {skills.skillList.map((category, index) => (
+                  <div key={index} className="skills-category-block">
+                    {/* Nom de la catégorie */}
+                    <h4 className="skills-category">{category.categoryName}</h4>
+
+                    {/* Compétences en ligne */}
+                    <div className="skills-category-items">
+                      {category.items.map((item, i) => (
+                        <div key={i} className="skills-item">
+                          {item.icon}
+                          <p className="skills-name">{item.name}</p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </TabsContent>
-            {/* About */}
+
+            {/*======================================= À PROPOS DE MOI======================================= */}
             <TabsContent value="about" className="tabs-content">
               <div className="about-container">
                 <h3 className="about-title">{about.title}</h3>

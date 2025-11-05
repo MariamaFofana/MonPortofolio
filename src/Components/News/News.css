@@ -1,0 +1,48 @@
+.news {
+  background-color: #fcba3a; /* couleur dorée */
+  color: #261d0d; /* texte foncé */
+  padding: 20px 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.news a {
+  color: #261d0d;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.news a:hover {
+  color: #453312;
+}
+
+/* Effet typewriter */
+.news-message {
+  display: inline-block;
+  border-right: 3px solid #261d0d; /* curseur */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(50, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    border-color: #261d0d;
+  }
+  25%, 75% {
+    border-color: transparent;
+  }
+}

@@ -15,6 +15,10 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+body, input, textarea, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 button {
   border-radius: 20px;
@@ -70,8 +74,8 @@ form {
 
 .input-field:focus,
 .textarea-field:focus {
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-  border-color: rgba(66, 153, 225, 0.5);
+  box-shadow: 0 0 0 3px rgba(239, 164, 16, 0.5);
+  border-color: rgba(202, 147, 30, 0.5);
 }
 
 .textarea-field {
@@ -98,4 +102,20 @@ form {
   color: red;
   font-size: 14px;
   margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 15px 5px;
+  }
+  form {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .textarea-field {
+    height: 120px;
+  }
+  button {
+    padding: 6px 30px;
+    font-size: 0.9rem;
+  }
 }

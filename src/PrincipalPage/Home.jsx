@@ -6,12 +6,14 @@ import Header from '../Components/Header/Header';
 import About from '../Components/About/About';
 import CVitae from '../Components/CVitae/CVitae';
 import Projets from '../Components/Projets/Projets';
+import News from '../Components/News/News';
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Header />
+       <News />
       <section id="About">
         <About />
       </section>

@@ -14,26 +14,41 @@ const About = () => {
         <h2 className="heading">
           À propos de <span>Moi</span>
         </h2>
-        <h3>Ingénieur Logiciel</h3>
+        <h3>
+          Étudiante en 3ᵉ année d’Ingénierie Informatique - Data Science & IA
+        </h3>
         <p>
-          Je suis Fofana Mariama, ingénieur logiciel passionné, avec une expertise en développement logiciel, gestion de projets, et design UX/UI.
+          Je suis Mariama Fofana, passionnée par l’analyse de données, le
+          machine learning et le développement logiciel. Mon objectif est de
+          transformer des idées en solutions concrètes et utiles.
         </p>
         <p>
-          Mon parcours commence avec un baccalauréat en mathématiques et un BTS en domotique, et je poursuis actuellement une formation en ingénierie informatique.
+          Mon parcours a commencé avec un baccalauréat en mathématiques, suivi
+          d’un BTS en domotique. Je poursuis actuellement mes études en
+          ingénierie informatique à CESI Lyon, spécialisée en Data Science &
+          Intelligence Artificielle.
         </p>
         <p>
-          J’aime voir mes idées prendre vie à travers le frontend design de sites et d’applications. Actif dans les associations, je m'investis dans l'organisation et la communication.
+          J’aime voir mes projets prendre vie à travers le développement
+          d’applications et la mise en place de solutions innovantes. Je suis
+          également active dans des projets associatifs et entrepreneuriaux, ce
+          qui me permet de développer mes compétences en organisation et
+          communication.
         </p>
         <p>
-          Je suis fier des projets scolaires et des défis que j’ai relevés, et je continue de me battre pour atteindre mes objectifs. Mes valeurs incluent le respect des autres et le bon raisonnement, et j’aborde chaque défi avec résilience et détermination.
+          Je suis fière des projets académiques et des défis que j’ai relevés,
+          et je continue à travailler avec rigueur, curiosité et détermination
+          pour atteindre mes objectifs. Mes valeurs incluent l’autonomie, le
+          respect et le sens du détail.
         </p>
         <p>
-          J’apprécie écouter de la musique, cuisiner, et aller à la salle de sport.
+          En dehors du développement, j’apprécie écouter de la musique, cuisiner
+          et pratiquer des activités sportives pour garder un équilibre.
         </p>
+
         <a href="#CVitae" className="btnAbout">
           En savoir plus
         </a>
-       
       </div>
     </div>
   );

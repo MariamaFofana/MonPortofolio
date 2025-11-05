@@ -2,41 +2,19 @@ import React from "react";
 import { Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import "./Footer.css";
 const footerQuickLinks = [
-  {
-    display: "Formations",
-    url: "#",
-  },
-  {
-    display: "Stages",
-    url: "#",
-  },
-  {
-    display: "Projets",
-    url: "#",
-  },
-  {
-    display: "Associations",
-    url: "#",
-  },
+  { display: "Formations", url: "#" },
+  { display: "Stages", url: "#" },
+  { display: "Projets", url: "#" },
+  { display: "Associations", url: "#" },
 ];
+
 const footerInfoLinks = [
-  {
-    display: "Blog",
-    url: "#",
-  },
-  {
-    display: "Plan du site ",
-    url: "Plan",
-  },
-  {
-    display: "Aide et support",
-    url: "#",
-  },
-  {
-    display: "Politique de confidentialité",
-    url: "#",
-  },
+  { display: "Blog", url: "#" },
+  { display: "Plan du site", url: "#" },
+  { display: "Aide et support", url: "#" },
+  { display: "Politique de confidentialité", url: "#" },
 ];
+
 const Footer = () => {
   return (
     <section className="footer">
@@ -49,7 +27,7 @@ const Footer = () => {
           </div>
           <div className="follows">
             <p className="mb-0">
-              Mes Reseaux sociaux<i class="ri-service-line"></i>
+              Mes Reseaux sociaux<i className="ri-service-line"></i>
             </p>
             <a href="https://www.facebook.com/mariama.fofana.771282/">
               <i className="ri-facebook-circle-line"></i>
