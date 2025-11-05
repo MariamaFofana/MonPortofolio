@@ -60,3 +60,58 @@ h2 {
   max-width: 100%; 
   width: 300px;
 }
+/* === Tablette (max-width: 1024px) === */
+@media (max-width: 1024px) {
+  .section1 {
+    padding: 40px 20px; /* réduire le padding */
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 45px;
+  }
+
+  .hero_content p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .search {
+    width: 80%; /* recherche plus adaptée aux écrans moyens */
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search .btn {
+    width: 100%; /* bouton plus large sur colonne */
+    margin-left: 0;
+  }
+
+  .image {
+    width: 50vw; /* image plus petite sur tablette */
+  }
+}
+
+/* === Mobile (max-width: 768px) === */
+@media (max-width: 768px) {
+  .section1 {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 35px;
+  }
+
+  .hero_content p {
+    font-size: 1.2rem;
+  }
+
+  .search {
+    width: 90%; /* occupe presque toute la largeur */
+  }
+
+  .image {
+    width: 70vw; /* image plus petite pour mobile */
+  }
+}

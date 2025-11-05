@@ -1,7 +1,4 @@
 import React from "react";
-import { RiArrowRightDownFill } from "react-icons/ri";
-import { IoLogoHtml5 } from "react-icons/io5";
-import { RiReactjsLine } from "react-icons/ri";
 import { FaNodeJs, FaGithub } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 
@@ -14,14 +11,16 @@ export const experience = {
       company: "Hôtel du Parc",
       position: "Réceptionniste",
       duration: "2023 - 2024",
-      description: "Accueil et gestion de la clientèle, organisation administrative.",
+      description:
+        "Accueil et gestion de la clientèle, organisation administrative.",
       location: "Lyon, France",
     },
     {
       company: "Association des Étudiants et Stagiaires Africains en Tunisie",
       position: "Chargée des affaires extérieures et des partenariats",
       duration: "12/2023 - 09/2023",
-      description: "Gestion des partenariats et développement des relations avec les acteurs locaux.",
+      description:
+        "Gestion des partenariats et développement des relations avec les acteurs locaux.",
       location: "Sousse, Tunisie",
     },
     {
@@ -114,7 +113,7 @@ export const education = {
       duration: "2014 - 2017",
       location: "Conakry, Guinée",
       description: "",
-    }
+    },
   ],
 };
 
@@ -126,37 +125,67 @@ export const skills = {
     {
       categoryName: "Environnements & Outils",
       items: [
-        { icon: <RiArrowRightDownFill />, name: "Visual Studio Code" },
-        { icon: <RiArrowRightDownFill />, name: "Eclipse" },
-        { icon: <RiArrowRightDownFill />, name: "Android Studio" },
-        { icon: <RiArrowRightDownFill />, name: "Git" },
-        { icon: <RiArrowRightDownFill />, name: "MATLAB" },
-        { icon: <RiArrowRightDownFill />, name: "NET / Visual Studio" },
-        { icon: <RiArrowRightDownFill />, name: "NetBeans" },
+        {
+          icon: <i className="devicon-vscode-plain colored"></i>,
+          name: "Visual Studio Code",
+        },
+        {
+          icon: <i className="devicon-eclipse-plain colored"></i>,
+          name: "Eclipse",
+        },
+        {
+          icon: <i className="devicon-androidstudio-plain colored"></i>,
+          name: "Android Studio",
+        },
+        {
+          icon: <i className="devicon-github-original colored"></i>,
+          name: "GitHub",
+        },
+        {
+          icon: <i className="devicon-matlab-plain colored"></i>,
+          name: "MATLAB",
+        },
+        {
+          icon: <i className="devicon-visualstudio-plain colored"></i>,
+          name: "NET / Visual Studio",
+        },
+        {
+          icon: <i className="devicon-netbeans-plain colored"></i>,
+          name: "NetBeans",
+        },
       ],
     },
     {
       categoryName: "Langages de programmation",
       items: [
-        { icon: <RiArrowRightDownFill />, name: "Java" },
-        { icon: <RiArrowRightDownFill />, name: "Kotlin" },
-        { icon: <RiArrowRightDownFill />, name: "Python" },
-        { icon: <RiArrowRightDownFill />, name: "C / C++ / C#" },
+        { icon: <i className="devicon-java-plain colored"></i>, name: "Java" },
+        {
+          icon: <i className="devicon-kotlin-plain colored"></i>,
+          name: "Kotlin",
+        },
+        {
+          icon: <i className="devicon-python-plain colored"></i>,
+          name: "Python",
+        },
+        {
+          icon: <i className="devicon-c-original colored"></i>,
+          name: "C / C++ / C#",
+        },
       ],
     },
     {
       categoryName: "Développement web",
       items: [
-        { icon: <IoLogoHtml5 />, name: "HTML" },
-        { icon: <RiArrowRightDownFill />, name: "CSS" },
-        { icon: <RiArrowRightDownFill />, name: "JavaScript" },
-        { icon: <RiArrowRightDownFill />, name: "Bootstrap" },
-        { icon: <RiArrowRightDownFill />, name: "XML / XSL" },
-        { icon: <RiReactjsLine />, name: "React-Redux" },
-        { icon: <RiArrowRightDownFill />, name: "PHP" },
+        { icon: <i className="devicon-html5-plain colored"></i>, name: "HTML" },
+    { icon: <i className="devicon-css3-plain colored"></i>, name: "CSS" },
+    { icon: <i className="devicon-javascript-plain colored"></i>, name: "JavaScript" },
+    { icon: <i className="devicon-bootstrap-plain colored"></i>, name: "Bootstrap" },
+    { icon: <i className="devicon-xml-plain colored"></i>, name: "XML / XSL" },
+    { icon: <i className="devicon-react-original colored"></i>, name: "React / Redux" },
+    { icon: <i className="devicon-php-plain colored"></i>, name: "PHP" },
       ],
     },
-        
+
     {
       categoryName: "Bases de données",
       items: [
@@ -171,33 +200,46 @@ export const skills = {
       items: [
         { icon: <BiLogoTypescript />, name: "Méthodes Agile (Scrum)" },
         { icon: <BiLogoTypescript />, name: "Analyse des besoins" },
-        { icon: <BiLogoTypescript />, name: "Conception UML" },
-        { icon: <BiLogoTypescript />, name: "Rédaction de cahiers des charges" },
+        {
+          icon: <devicon-unifiedmodelinglanguage-plain />,
+          name: "Conception UML",
+        },
+        {
+          icon: <BiLogoTypescript />,
+          name: "Rédaction de cahiers des charges",
+        },
       ],
     },
     {
       categoryName: "Analyse de données & visualisation",
-     items: [
-        { icon: <RiArrowRightDownFill />, name: "Python (Pandas, NumPy)" },
-        { icon: <RiArrowRightDownFill />, name: "R" },
-        { icon: <RiArrowRightDownFill />, name: "Matplotlib / Seaborn" },
+      items: [
+       { icon: <i className="devicon-python-plain colored"></i>, name: "Python (Pandas, NumPy)" },
+    { icon: <i className="devicon-r-original colored"></i>, name: "R" },
+    { icon: <i className="devicon-matplotlib-plain colored"></i>, name: "Matplotlib / Seaborn" },
+  
       ],
     },
     {
       categoryName: "Tests & qualité",
       items: [
-        { icon: <FaGithub />, name: "Tests unitaires / fonctionnels" },
-        { icon: <FaGithub />, name: "Documentation / Validation fonctionnelle" },
+        {
+          icon: <devicon-unifiedmodelinglanguage-plain />,
+          name: "Tests unitaires / fonctionnels",
+        },
+        {
+          icon: <devicon-unifiedmodelinglanguage-plain />,
+          name: "Documentation / Validation fonctionnelle",
+        },
       ],
     },
-  
   ],
 };
 
 // ====================== association ======================
 export const association = {
   title: "Associations",
-  description: "Mon engagement dans les associations, souvent en tant que responsable de l'organisation et de la communication, reflète mon désir de contribuer activement à la communauté.",
+  description:
+    "Mon engagement dans les associations, souvent en tant que responsable de l'organisation et de la communication, reflète mon désir de contribuer activement à la communauté.",
   items: [
     {
       position: "Membre",
@@ -205,7 +247,8 @@ export const association = {
       location: "Lyon, France",
       duration: "2023 - Présent",
       role: "Mentoré",
-      description: "Accompagnement et mentorat de nouveaux membres dans l'association."
+      description:
+        "Accompagnement et mentorat de nouveaux membres dans l'association.",
     },
     {
       position: "Membre",
@@ -213,7 +256,8 @@ export const association = {
       location: "Lyon, France",
       duration: "2023 - Présent",
       role: "Bénévole",
-      description: "Participation active aux événements et missions de l'association."
+      description:
+        "Participation active aux événements et missions de l'association.",
     },
     {
       position: "Chargée aux affaires extérieures",
@@ -221,7 +265,7 @@ export const association = {
       location: "Sousse, Tunisie",
       duration: "12-2022 - 09-2023",
       role: "Chargée de partenariats",
-      description: "Gestion des partenariats et des relations extérieures."
+      description: "Gestion des partenariats et des relations extérieures.",
     },
     {
       position: "Secrétaire Générale",
@@ -229,7 +273,8 @@ export const association = {
       location: "Sousse, Tunisie",
       duration: "11-2021 - 12-2022",
       role: "Organisation d'activités",
-      description: "Organisation d'activités culturelles, sportives et scientifiques."
+      description:
+        "Organisation d'activités culturelles, sportives et scientifiques.",
     },
   ],
 };

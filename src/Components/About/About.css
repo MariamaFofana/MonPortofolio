@@ -94,3 +94,61 @@
 .btnAbout:hover {
   background-color: var(--gold4);
 }
+/* === Tablette (max-width: 1024px) === */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column; /* Colonne au lieu de ligne */
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .about-content {
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .about-content p {
+    font-size: 0.8rem;
+  }
+
+  .image {
+    width: 50vw;
+  }
+}
+
+/* === Mobile (max-width: 768px) === */
+@media (max-width: 768px) {
+  .about {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-content h3 {
+    font-size: 0.8rem;
+  }
+
+  .about-content p {
+    font-size: 0.7rem;
+  }
+
+  .image {
+    width: 70vw;
+  }
+
+  .btnAbout {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

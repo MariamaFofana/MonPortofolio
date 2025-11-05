@@ -81,17 +81,75 @@ span {
     color: var(--gold4);
     box-shadow: 0 0 10px var(--gold4);
 }
+/* === Home Section (desktop) === */
+/* Ton CSS actuel reste tel quel */
 
-@media (max-width: 768px) {
-    .home-content h1 {
-      font-size: 2.5rem;
-    }
-    .home-img img {
-      width: 60vw; /* image plus large sur mobile */
-      max-width: none;
-    }
+/* === Media Queries Tablette (max-width: 1024px) === */
+@media (max-width: 1024px) {
     .home {
-      flex-direction: column; /* texte au-dessus de l'image sur mobile */
-      gap: 20px;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 0.9rem;
+    }
+
+    .home-img img {
+        width: 40vw;
+        max-width: 250px;
+    }
+
+    .social a {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+        margin: 1.5rem 0.5rem 1rem 0;
+    }
+}
+
+/* === Media Queries Mobile (max-width: 768px) === */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column; /* texte au-dessus de l'image */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .home-content h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .home-content p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 60vw;
+        max-width: none;
+        border-radius: 20%;
+    }
+
+    .social a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+        margin: 1rem 0.5rem;
     }
 }

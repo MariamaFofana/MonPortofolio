@@ -103,6 +103,7 @@ form {
   font-size: 14px;
   margin-top: 10px;
 }
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 15px 5px;
@@ -117,5 +118,123 @@ form {
   button {
     padding: 6px 30px;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* About */
+  .about {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+  .about-content {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+  .about-content h3 {
+    font-size: 0.9rem;
+  }
+  .about-content p {
+    font-size: 0.8rem;
+  }
+  .image {
+    width: 50vw;
+  }
+
+  /* Section1 / Hero */
+  .section1 {
+    padding: 40px 20px;
+  }
+  h2 {
+    font-size: 1.8rem;
+    line-height: 45px;
+  }
+  .hero_content p {
+    font-size: 1.4rem;
+  }
+  .search {
+    width: 80%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search .btn {
+    width: 100%;
+    margin-left: 0;
+  }
+  .image {
+    width: 50vw;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 15px 10px;
+  }
+  form {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .textarea-field {
+    height: 120px;
+  }
+  button {
+    padding: 6px 35px;
+    font-size: 0.9rem;
+  }
+}
+
+/* === Media Queries Mobile === */
+@media (max-width: 768px) {
+  /* About */
+  .about-content h2 {
+    font-size: 1.2rem;
+  }
+  .about-content h3 {
+    font-size: 0.8rem;
+  }
+  .about-content p {
+    font-size: 0.7rem;
+  }
+  .image {
+    width: 70vw;
+  }
+  .btnAbout {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Section1 / Hero */
+  .section1 {
+    padding: 20px 10px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .hero_content p {
+    font-size: 1.2rem;
+  }
+  .search {
+    width: 90%;
+  }
+  .image {
+    width: 70vw;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 10px 5px;
+  }
+  form {
+    padding: 10px;
+  }
+  .textarea-field {
+    height: 100px;
+  }
+  button {
+    padding: 5px 25px;
+    font-size: 0.85rem;
   }
 }
