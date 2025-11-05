@@ -37,30 +37,31 @@ Je suis passionnée par le développement et l'analyse de données, et je cherch
 
 ### 📂 Organisation du projet
 
+# 🌐 Mon Portfolio
+
 Mon portfolio est construit en **React.js** avec une architecture claire et modulaire :  
 
+```bash
 src/
 │
-├─ components/ # Tous les composants du portfolio
-│ ├─ About/ # Section "À propos"
-│ ├─ Contact/ # Section "Contact"
-│ ├─ Accueil/ # Section d'accueil / Hero
-│ ├─ CVitae/ # CV interactif
-│ ├─ Footer/ # Pied de page
-│ ├─ Header/ # En-tête
-│ ├─ Navbar/ # Barre de navigation
-│ └─ Projets/ # Liste de projets
+├─ components/                 # Tous les composants du portfolio
+│  ├─ About/                   # Section "À propos"
+│  ├─ Contact/                 # Section "Contact"
+│  ├─ Accueil/                 # Section d'accueil / Hero
+│  ├─ CVitae/                  # CV interactif
+│  ├─ Footer/                  # Pied de page
+│  ├─ Header/                  # En-tête
+│  ├─ Navbar/                  # Barre de navigation
+│  └─ Projets/                 # Liste de projets
 │
-├─ IMAGES/ # Toutes les images utilisées
-├─ FICHIER/ # Fichiers à charger dans le portfolio (CV, documents)
-├─ PrincipalPage/ # Page principale (Home.jsx)
+├─ IMAGES/                     # Toutes les images utilisées
+├─ FICHIER/                    # Fichiers à charger dans le portfolio (CV, documents)
+├─ PrincipalPage/              # Page principale (Home.jsx)
 ├─ App.js
 ├─ index.js
 ├─ App.css
 └─ index.css
-
----
-
+```
 ### 📂 Composants principaux
 
 | Composant      | Description |
@@ -86,7 +87,7 @@ Pour lancer ce portfolio localement :
 ### Installation
 ```bash
 # Cloner le dépôt
-git clone https://github.com/tonpseudo/monportofolio.git
+git clone https://github.com/MariamaFofana/MonPortofolio.git
 
 # Aller dans le dossier du projet
 cd monportofolio
