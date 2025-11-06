@@ -338,7 +338,7 @@ export const about = {
     },
     {
       fieldName: "LinkedIn",
-      fieldValue: "MariamaFofana #href'linkedin.com/in/m-fofana/'",
+      fieldValue: "Mariama Fofana",
     },
     {
       fieldName: "Nationalité",
