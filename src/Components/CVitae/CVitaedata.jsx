@@ -1,7 +1,11 @@
 import React from "react";
-import { FaNodeJs, FaGithub } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-
+import { SiEclipseide, SiApachenetbeanside, SiUml, SiSitepoint } from "react-icons/si";
+import { BsFiletypeXml } from "react-icons/bs";
+import { GrMysql } from "react-icons/gr";
+import { AiOutlineConsoleSql } from "react-icons/ai";
+import { FaCode } from "react-icons/fa6";
+import { FcScatterPlot } from "react-icons/fc";
+import { BiSolidAnalyse } from "react-icons/bi";
 // ====================== EXPERIENCE ======================
 export const experience = {
   title: "Expériences professionnelles",
@@ -130,7 +134,7 @@ export const skills = {
           name: "Visual Studio Code",
         },
         {
-          icon: <i className="devicon-eclipse-plain colored"></i>,
+          icon: <SiEclipseide className="skill-icon" />,
           name: "Eclipse",
         },
         {
@@ -150,7 +154,7 @@ export const skills = {
           name: "NET / Visual Studio",
         },
         {
-          icon: <i className="devicon-netbeans-plain colored"></i>,
+          icon: <SiApachenetbeanside className="skill-icon" />,
           name: "NetBeans",
         },
       ],
@@ -168,7 +172,7 @@ export const skills = {
           name: "Python",
         },
         {
-          icon: <i className="devicon-c-original colored"></i>,
+          icon: <FaCode className="skill-icon"/>,
           name: "C / C++ / C#",
         },
       ],
@@ -177,57 +181,93 @@ export const skills = {
       categoryName: "Développement web",
       items: [
         { icon: <i className="devicon-html5-plain colored"></i>, name: "HTML" },
-    { icon: <i className="devicon-css3-plain colored"></i>, name: "CSS" },
-    { icon: <i className="devicon-javascript-plain colored"></i>, name: "JavaScript" },
-    { icon: <i className="devicon-bootstrap-plain colored"></i>, name: "Bootstrap" },
-    { icon: <i className="devicon-xml-plain colored"></i>, name: "XML / XSL" },
-    { icon: <i className="devicon-react-original colored"></i>, name: "React / Redux" },
-    { icon: <i className="devicon-php-plain colored"></i>, name: "PHP" },
+        { icon: <i className="devicon-css3-plain colored"></i>, name: "CSS" },
+        {
+          icon: <i className="devicon-javascript-plain colored"></i>,
+          name: "JavaScript",
+        },
+        {
+          icon: <i className="devicon-bootstrap-plain colored"></i>,
+          name: "Bootstrap",
+        },
+        {
+          icon: <BsFiletypeXml className="skill-icon"/>,
+          name: "XML / XSL",
+        },
+        {
+          icon: <i className="devicon-react-original colored"></i>,
+          name: "React / Redux",
+        },
+        { icon: <i className="devicon-php-plain colored"></i>, name: "PHP" },
       ],
     },
 
     {
       categoryName: "Bases de données",
       items: [
-        { icon: <FaNodeJs />, name: "SQL" },
-        { icon: <FaNodeJs />, name: "Oracle" },
-        { icon: <FaNodeJs />, name: "MySQL" },
-        { icon: <FaNodeJs />, name: "MongoDB" },
+        {
+          icon: <AiOutlineConsoleSql className="skill-icon"/>,
+          name: "SQL",
+        },
+        {
+          icon: <i className="devicon-oracle-original colored"></i>,
+          name: "Oracle",
+        },
+        {
+          icon: <GrMysql className="skill-icon"/>,
+          name: "MySQL",
+        },
+        {
+          icon: <i className="devicon-mongodb-plain colored"></i>,
+          name: "MongoDB",
+        },
       ],
     },
     {
       categoryName: "Méthodes & gestion de projet",
       items: [
-        { icon: <BiLogoTypescript />, name: "Méthodes Agile (Scrum)" },
-        { icon: <BiLogoTypescript />, name: "Analyse des besoins" },
         {
-          icon: <devicon-unifiedmodelinglanguage-plain />,
+          icon: <i className="devicon-trello-plain colored"></i>,
+          name: "Méthodes Agile (Scrum)",
+        },
+        {
+          icon: <BiSolidAnalyse className="skill-icon"/>,
+          name: "Analyse des besoins",
+        },
+        {
+          icon: <SiUml className="skill-icon"/>,
           name: "Conception UML",
         },
         {
-          icon: <BiLogoTypescript />,
+          icon: <i className="devicon-confluence-original colored"></i>,
           name: "Rédaction de cahiers des charges",
         },
       ],
     },
+
     {
       categoryName: "Analyse de données & visualisation",
       items: [
-       { icon: <i className="devicon-python-plain colored"></i>, name: "Python (Pandas, NumPy)" },
-    { icon: <i className="devicon-r-original colored"></i>, name: "R" },
-    { icon: <i className="devicon-matplotlib-plain colored"></i>, name: "Matplotlib / Seaborn" },
-  
+        {
+          icon: <i className="devicon-python-plain colored"></i>,
+          name: "Python (Pandas, NumPy)",
+        },
+        { icon: <i className="devicon-r-original colored"></i>, name: "R" },
+         {
+        icon: <FcScatterPlot className="skill-icon"/>,
+        name: "Matplotlib"
+      }
       ],
     },
     {
       categoryName: "Tests & qualité",
       items: [
         {
-          icon: <devicon-unifiedmodelinglanguage-plain />,
+          icon: <SiSitepoint  className="skill-icon"/>,
           name: "Tests unitaires / fonctionnels",
         },
         {
-          icon: <devicon-unifiedmodelinglanguage-plain />,
+          icon: <i className="devicon-gitlab-plain colored"></i>,
           name: "Documentation / Validation fonctionnelle",
         },
       ],

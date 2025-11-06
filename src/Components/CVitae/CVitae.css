@@ -256,8 +256,16 @@
 }
 .skills-item i {
   font-size: 3rem; 
+} 
+.skill-icon {
+  font-size: 3rem;   /* taille */
+  color: #2C2255;    /* couleur */
+  transition: transform 0.2s;
 }
 
+.skill-icon:hover {
+  transform: scale(1.2); /* effet hover */
+}
 
 /* ===== Desktop (grands écrans ≥1024px) ===== */
 @media (min-width: 1024px) {
