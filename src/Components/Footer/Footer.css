@@ -3,6 +3,8 @@
   --PrimaryColor: #ffffff;
   --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
   --or1: #b37b00;
+  --or2: #bf8600; /* Ajouté ici pour éviter l'erreur d'affichage */
+  --or3: #cb9000;
   --or4: #fcba3a;
   --black1: #000000;
   --black2: #453312;
@@ -12,35 +14,54 @@
 .footer {
   background: rgba(221, 214, 179, 0.664);
   margin-top: 40px;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
-.logo {
+/* Style pour le conteneur et l'image du logo */
+.footer-logo-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 30px;
-  font-weight: 900;
-  font-family: "Lobster", cursive;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  max-width: 140px; /* Ajuste cette valeur selon la taille souhaitée de ton logo */
+  height: auto;
+  display: block;
+}
+
+/* Centrage du logo sur mobile */
+@media (max-width: 768px) {
+  .footer-logo-container {
+    justify-content: center;
+  }
 }
 
 .follows {
   margin-top: 1rem;
 }
 
+.follows p {
+  color: var(--black3);
+  font-weight: 600;
+}
+
 .follows a {
   text-decoration: none;
-  color: #f5bc10;
+  color: var(--or2);
   margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.follows a:hover {
+  transform: scale(1.1);
+  color: var(--black1);
 }
 
 .follows i {
   font-size: 2rem;
-}
-
-.follows a:hover,
-.links a:hover {
-  color: var(--black1);
 }
 
 .Link_list a {
@@ -48,50 +69,36 @@
   color: #2b260a;
   font-weight: 500;
   padding-left: 15px;
+  transition: color 0.3s ease;
 }
 
+.Link_list a:hover,
+.links a:hover,
 .quick a:hover {
-  color: var(--black1);
+  color: var(--or1);
 }
 
 .contact h6 {
   color: var(--or2);
   font-size: 1rem;
-  line-height: 50px;
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 600;
+  line-height: 35px;
+  font-weight: 700;
 }
 
 .contact p {
   color: var(--black1);
-  font-size: 1rem;
-  line-height: 35px;
-  font-family: 'Source Serif Pro', serif;
+  font-size: 0.95rem;
+  line-height: 28px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .final {
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: var(--or1);
-}
-  
-@media (max-width: 768px) {
-  .footer {
-    padding: 30px 15px;
-  }
-
-  .follows {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .Link_list {
-    margin-top: 15px;
-  }
-
-  .contact {
-    margin-top: 20px;
-  }
+  color: var(--PrimaryColor);
+  margin-top: 20px;
+  font-weight: 500;
 }
 
 /* === Media Queries Tablette (max-width: 1024px) === */
@@ -101,7 +108,7 @@
   }
 
   .logo {
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 28px;
   }
 
@@ -109,23 +116,9 @@
     margin: 0 8px;
   }
 
-  .follows i {
-    font-size: 1.8rem;
-  }
-
   .Link_list a {
     padding-left: 10px;
     font-size: 0.9rem;
-  }
-
-  .contact h6 {
-    font-size: 0.95rem;
-    line-height: 45px;
-  }
-
-  .contact p {
-    font-size: 0.95rem;
-    line-height: 30px;
   }
 }
 
@@ -157,7 +150,8 @@
   }
 
   .Link_list {
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 
   .Link_list a {
@@ -167,16 +161,10 @@
   }
 
   .contact {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .contact h6 {
-    font-size: 0.9rem;
-    line-height: 40px;
-  }
-
-  .contact p {
-    font-size: 0.9rem;
-    line-height: 28px;
+    line-height: 30px;
   }
 }

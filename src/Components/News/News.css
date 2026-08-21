@@ -1,48 +1,85 @@
+/* =========================================
+   BANDEAU D'ANNONCE (NEWS)
+========================================= */
 .news {
-  background-color: #fcba3a; /* couleur dorée */
-  color: #261d0d; /* texte foncé */
-  padding: 20px 30px;
-  margin: 20px 0;
+  background-color: var(--gold4, #fcba3a);
+  color: var(--black3, #261d0d);
+  padding: 15px 30px;
+  margin: 0 8% 20px 8%; 
   border-radius: 10px;
   text-align: center;
   font-weight: 600;
-  overflow: hidden;
-  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(252, 186, 58, 0.3); 
 }
 
-.news a {
-  color: #261d0d;
+.news-link {
+  color: var(--black3, #261d0d);
   text-decoration: underline;
   margin-left: 10px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  white-space: nowrap; 
 }
 
-.news a:hover {
-  color: #453312;
+.news-link:hover {
+  color: var(--primary-color, #ffffff); 
 }
 
-/* Effet typewriter */
+/* =========================================
+   BLOCS DE LANGUE (EMPILÉS)
+========================================= */
+.separator {
+  display: none; 
+}
+
 .news-message {
-  display: inline-block;
-  border-right: 3px solid #261d0d; /* curseur */
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 4s steps(50, end), blink 0.75s step-end infinite;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+.lang-block {
+  display: block;
+  line-height: 1.5;
+  animation: fadeIn 1.5s ease-in-out; 
+}
+
+/* Ligne de séparation esthétique entre le FR et le EN */
+.lang-block:first-child {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(44, 43, 40, 0.2);
+  width: 100%; 
+  max-width: 800px;
+}
+
+/* =========================================
+   RESPONSIVE (Tablette & Mobile)
+========================================= */
+@media (max-width: 768px) {
+  .news {
+    margin: 0 5% 20px 5%;
+    padding: 15px;
   }
-  to {
-    width: 100%;
+
+  .news-link {
+    display: inline-block;
+    margin-top: 8px; /* Sépare légèrement le bouton du texte sur mobile */
   }
 }
 
-@keyframes blink {
-  0%, 50%, 100% {
-    border-color: #261d0d;
+/* =========================================
+   ANIMATIONS
+========================================= */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
   }
-  25%, 75% {
-    border-color: transparent;
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }

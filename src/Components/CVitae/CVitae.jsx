@@ -16,9 +16,10 @@ const CVitae = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
       }}
       className="container-wrapper"
+      id="CVitae"
     >
       <div className="container">
         <Tabs defaultValue="experience" className="tabs-container">
@@ -31,7 +32,7 @@ const CVitae = () => {
           </TabsList>
 
           <div className="content-container">
-            {/* =======================================EXPÉRIENCES================================== */}
+            {/* ================= EXPÉRIENCES ================= */}
             <TabsContent value="experience" className="tabs-content">
               <div className="experience-container">
                 <h3 className="experience-title">{experience.title}</h3>
@@ -65,7 +66,7 @@ const CVitae = () => {
               </div>
             </TabsContent>
 
-            {/* =======================================FORMATIONS =======================================*/}
+            {/* ================= FORMATIONS ================= */}
             <TabsContent value="education" className="tabs-content">
               <div className="education-container">
                 <h3 className="education-title">{education.title}</h3>
@@ -101,7 +102,7 @@ const CVitae = () => {
               </div>
             </TabsContent>
 
-            {/*=======================================ASSOCIATIONS=======================================*/}
+            {/* ================= ASSOCIATIONS ================= */}
             <TabsContent value="association" className="tabs-content">
               <div className="association-container">
                 <h3 className="association-title">{association.title}</h3>
@@ -111,18 +112,20 @@ const CVitae = () => {
                 <div className="association-grid">
                   {association.items.map((item, index) => (
                     <div key={index} className="association-item">
+                      <span className="experience-duration">{item.duration}</span>
                       <h4 className="association-position">{item.position}</h4>
-                      <p className="association-nom">{item.nom}</p>
+                      <p className="association-nom"><strong>{item.nom}</strong> - {item.role}</p>
                       <p className="association-lieu">{item.lieu}</p>
-                      <p className="association-duration">{item.duration}</p>
-                      <p className="association-role">{item.role}</p>
+                      {item.description && (
+                        <p className="experience-description-item">{item.description}</p>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
             </TabsContent>
 
-            {/* =======================================COMPÉTENCES =======================================*/}
+            {/* ================= COMPÉTENCES ================= */}
             <TabsContent value="skills" className="tabs-content">
               <div className="skills-container">
                 <h3 className="skills-title">{skills.title}</h3>
@@ -130,10 +133,7 @@ const CVitae = () => {
 
                 {skills.skillList.map((category, index) => (
                   <div key={index} className="skills-category-block">
-                    {/* Nom de la catégorie */}
                     <h4 className="skills-category">{category.categoryName}</h4>
-
-                    {/* Compétences en ligne */}
                     <div className="skills-category-items">
                       {category.items.map((item, i) => (
                         <div key={i} className="skills-item">
@@ -147,7 +147,7 @@ const CVitae = () => {
               </div>
             </TabsContent>
 
-            {/*======================================= À PROPOS DE MOI======================================= */}
+            {/* ================= À PROPOS DE MOI ================= */}
             <TabsContent value="about" className="tabs-content">
               <div className="about-container">
                 <h3 className="about-title">{about.title}</h3>
@@ -170,5 +170,6 @@ const CVitae = () => {
     </motion.div>
   );
 };
+
 
 export default CVitae;

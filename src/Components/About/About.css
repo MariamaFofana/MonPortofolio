@@ -19,13 +19,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem; /* Légèrement augmenté pour aérer l'espace */
   background: var(--gold1);
   padding: 3rem 2rem;
 }
 
+/* L'image prend 30% de l'espace */
 .about-img {
-  flex: 1;
+  flex: 0.3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,37 +34,94 @@
 
 .image-container {
   width: 100%;
-  max-width: 250px;
+  max-width: 300px; /* Légèrement élargi pour équilibrer */
   border-radius: 15px;
-  overflow: hidden;
+  overflow: hidden; 
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   display: inline-block; 
   padding: 10px; 
   border: 5px solid rgb(245, 181, 5); 
   box-sizing: border-box; 
+  position: relative; 
 }
 
 .image {
-  width: 35vw;
+  width: 100%;
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
   display: block;
   max-width: 100%; 
 }
 
-.image:hover {
+/* === Début des effets OVERLAY (Survol) === */
+.overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.image-container:hover .image {
   transform: scale(1.05);
 }
 
+.overlay-values {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.overlay-values li {
+  color: var(--gold4);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.image-container:hover .overlay-values li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.image-container:hover .overlay-values li:nth-child(1) { transition-delay: 0.1s; }
+.image-container:hover .overlay-values li:nth-child(2) { transition-delay: 0.2s; }
+.image-container:hover .overlay-values li:nth-child(3) { transition-delay: 0.3s; }
+.image-container:hover .overlay-values li:nth-child(4) { transition-delay: 0.4s; }
+.image-container:hover .overlay-values li:nth-child(5) { transition-delay: 0.5s; }
+/* === Fin des effets OVERLAY === */
+
+/* Le texte prend 70% de l'espace */
 .about-content {
-  flex: 1;
-  padding: 1rem;
+  flex: 0.7;
+  padding: 1.5rem;
 }
 
 .heading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--black3);
+}
+
+.heading span {
+  color: var(--gold3, #cb9000); 
 }
 
 .about-content h2 {
@@ -72,13 +130,22 @@
 }
 
 .about-content h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--black2);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .about-content p {
-  font-size: 0.6rem;
-  margin: 1rem 0 1rem;
+  font-size: 0.95rem; 
+  line-height: 1.6; 
+  color: var(--black3);
+  margin: 1rem 0;
+}
+
+.about-content p em {
+  color: var(--gold2);
+  font-weight: bold;
 }
 
 .btnAbout {
@@ -88,18 +155,25 @@
   color: var(--primary-color);
   border-radius: 5px;
   text-decoration: none;
+  font-weight: 600;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .btnAbout:hover {
   background-color: var(--gold4);
 }
+
 /* === Tablette (max-width: 1024px) === */
 @media (max-width: 1024px) {
   .about {
-    flex-direction: column; /* Colonne au lieu de ligne */
+    flex-direction: column;
     gap: 1.5rem;
     padding: 2rem 1.5rem;
+  }
+
+  .about-img, .about-content {
+    flex: 1; /* Repasse en pleine largeur sur tablette/mobile */
   }
 
   .about-content {
@@ -116,11 +190,11 @@
   }
 
   .about-content p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
-  .image {
-    width: 50vw;
+  .image-container {
+    max-width: 250px;
   }
 }
 
@@ -140,11 +214,16 @@
   }
 
   .about-content p {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
-  .image {
-    width: 70vw;
+  .image-container {
+    max-width: 200px;
+  }
+  
+  .overlay-values li {
+    font-size: 1rem;
+    margin: 8px 0;
   }
 
   .btnAbout {

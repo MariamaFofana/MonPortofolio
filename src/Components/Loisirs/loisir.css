@@ -1,0 +1,115 @@
+/* Conteneur principal de la section Loisirs (Fond Noir) */
+.loisirs-section-complete {
+  background-color: #0b0b0a;
+  padding: 5rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ================= 1. PARTIE HAUT ================= */
+.loisirs-header-top {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre tous les éléments horizontalement */
+}
+
+/* Grand cœur hors du cadre */
+.loisirs-heart-icon-wrapper {
+  font-size: 2.8rem; /* Grande taille */
+  color: #edb807; /* Couleur jaune / orange lumineux */
+  margin-bottom: 0.5rem;
+  animation: pulse-heart 2s infinite ease-in-out;
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Badge LOISIRS épuré */
+.loisirs-badge {
+  display: inline-block;
+  background-color: rgba(252, 186, 58, 0.08);
+  color: #fcba3a;
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(252, 186, 58, 0.25);
+}
+
+.loisirs-title-main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.highlight-text {
+  color: #edb807;
+}
+
+.loisirs-subtitle-main {
+  font-size: 1rem;
+  color: #d1cbc1;
+  line-height: 1.5;
+}
+
+/* ================= 3. PARTIE BAS (Citation) ================= */
+.loisirs-footer-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.quote-container-bottom {
+  background: #16120c;
+  color: #ffffff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 8px 25px rgba(237, 184, 7, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(237, 184, 7, 0.25);
+}
+
+.quote-container-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #f4f1ec;
+  flex: 1;
+}
+
+.quote-icon-left,
+.quote-icon-right {
+  color: #fcba3a;
+  font-size: 1.2rem;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .loisirs-title-main {
+    font-size: 2rem;
+  }
+  .loisirs-heart-icon-wrapper {
+    font-size: 2.2rem;
+  }
+  .quote-container-bottom {
+    padding: 1.2rem 1.5rem;
+  }
+}

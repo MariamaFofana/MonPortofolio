@@ -7,47 +7,55 @@ const About = () => {
     <div className="about" id="about">
       <div className="about-img">
         <div className="image-container">
-          <img src={heroImg} alt="Photo de Fofana" className="image" />
+          <img src={heroImg} alt="Portrait de Mariama Fofana" className="image" />
+          
+          {/* L'overlay qui apparaît au survol */}
+          <div className="overlay">
+            <ul className="overlay-values">
+              <li>La Foi</li>
+              <li>Le Travail</li>
+              <li>La Loyauté</li>
+              <li>Le Respect</li>
+              <li>La Propreté</li>
+            </ul>
+          </div>
+          
         </div>
       </div>
+      
       <div className="about-content">
         <h2 className="heading">
           À propos de <span>Moi</span>
         </h2>
+        
         <h3>
-          Étudiante en 3ᵉ année d’Ingénierie Informatique - Data Science & IA
+          Au-delà du code...
         </h3>
+        
         <p>
-          Je suis Mariama Fofana, passionnée par l’analyse de données, le
-          machine learning et le développement logiciel. Mon objectif est de
-          transformer des idées en solutions concrètes et utiles.
+          Si mon profil technique est orienté vers l'IA et la Data, mon parcours, lui, est avant tout une histoire de curiosité. D'un baccalauréat en mathématiques à un BTS en domotique, jusqu'à mon cycle d'ingénieur actuel à CESI Lyon, j'ai toujours été fascinée par la logique et la façon dont la technologie simplifie notre quotidien.
         </p>
-        <p>
-          Mon parcours a commencé avec un baccalauréat en mathématiques, suivi
-          d’un BTS en domotique. Je poursuis actuellement mes études en
-          ingénierie informatique à CESI Lyon, spécialisée en Data Science &
-          Intelligence Artificielle.
+        
+       <p>
+          Mais derrière l'écran, mon parcours est avant tout tourné vers l'humain, l'entraide et le service. J'ai eu l'opportunité de développer mon sens de l'écoute et mon empathie à travers diverses expériences fortes : de mon travail en tant que réceptionniste en hôtellerie à l'accompagnement de personnes en situation de handicap en France.
         </p>
+        
         <p>
-          J’aime voir mes projets prendre vie à travers le développement
-          d’applications et la mise en place de solutions innovantes. Je suis
-          également active dans des projets associatifs et entrepreneuriaux, ce
-          qui me permet de développer mes compétences en organisation et
-          communication.
+          Mon ouverture à la richesse interculturelle s'est également forgée sur le terrain en Tunisie, que ce soit par mon engagement associatif auprès de populations migrantes ou dans l'organisation d'événements étudiants. Toutes ces expériences de vie m'ont appris à m'adapter à n'importe quel environnement et ont profondément façonné mon leadership.
         </p>
+        
         <p>
-          Je suis fière des projets académiques et des défis que j’ai relevés,
-          et je continue à travailler avec rigueur, curiosité et détermination
-          pour atteindre mes objectifs. Mes valeurs incluent l’autonomie, le
-          respect et le sens du détail.
+          Que ce soit dans mon quotidien personnel ou dans ma vie professionnelle, je m'appuie sur cinq piliers qui forgent mon identité et guident mes actions :
+        <br/><br/>
+          <em>✨ Passez la souris sur ma photo pour les découvrir !</em>
         </p>
+        
         <p>
-          En dehors du développement, j’apprécie écouter de la musique, cuisiner
-          et pratiquer des activités sportives pour garder un équilibre.
+          Pour équilibrer ce quotidien rythmé, je me ressource à travers la musique, la cuisine et le sport, des passions qui m'aident à cultiver ma créativité et ma vitalité.
         </p>
 
         <a href="#CVitae" className="btnAbout">
-          En savoir plus
+          Découvrir mon parcours
         </a>
       </div>
     </div>

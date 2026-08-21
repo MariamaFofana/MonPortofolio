@@ -1,22 +1,17 @@
 import React, { useRef } from "react";
 import "./Navbar.css";
+// Import de ton logo depuis le dossier IMAGES
+import logoRiiri from "../../IMAGES/MonLogo.png";
 
 const Navbar = () => {
   const menuRef = useRef(null);
 
+  // Fonction pour afficher/masquer le menu sur mobile
   const menuToggle = () => {
     menuRef.current.classList.toggle("active_menu");
   };
 
-  const categories = [
-    { name: "Art", link: "#Art" },
-    { name: "DevPerson", link: "#DevPerson" },
-    { name: "Informatique", link: "#Informatique" },
-    { name: "Marketing", link: "#Marketing" },
-    { name: "Musique", link: "#Musique" },
-    { name: "Photographie", link: "#Photographie" }
-  ];
-
+  // Les éléments de ta navigation principale
   const navItems = [
     { name: "Qui suis-je", link: "#About", icon: "ri-heart-2-fill" },
     { name: "Mes projets", link: "#Projets" },
@@ -26,30 +21,36 @@ const Navbar = () => {
   return (
     <section>
       <div className="navbar">
+        
+        {/* --- SECTION LOGO --- */}
         <div className="logo">
           <a className="link" href="/">
-            <h2 className="">
-              <i className="ri-infinity-line"></i>RiiRi.
-            </h2>
+            <img 
+              src={logoRiiri} 
+              alt="Logo RiiRi" 
+              className="logo-img" 
+            />
           </a>
         </div>
+
+        {/* --- SECTION LOISIRS (Vers la page type réseau social) --- */}
         <div className="categories">
           <ul>
-            <li className="with-submenu">
-              Loisirs
-              <ul className="submenu">
-                {categories.map((category) => (
-                  <li key={category.name}>
-                    <a className="link" href={category.link}>
-                      {category.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <li className="nav_item">
+              <a className="link" href="/Loisirs"> 
+                <i className="ri-layout-grid-fill"></i> Loisirs
+              </a>
             </li>
           </ul>
         </div>
-        <ul className="nav-links">
+
+        {/* --- BOUTON MENU MOBILE --- */}
+        <span className="mobile_menu" onClick={menuToggle}>
+          <i className="ri-menu-line"></i>
+        </span>
+
+        {/* --- LIENS DE NAVIGATION PRINCIPAUX --- */}
+        <ul className="nav-links" ref={menuRef}>
           {navItems.map((item) => (
             <li className="nav_item" key={item.name}>
               <a className="link" href={item.link}>
@@ -61,6 +62,7 @@ const Navbar = () => {
             <i className="ri-search-eye-line"></i>
           </li>
         </ul>
+        
       </div>
     </section>
   );

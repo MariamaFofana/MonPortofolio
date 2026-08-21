@@ -1,3 +1,6 @@
+/* =========================================
+   VARIABLES ET GLOBAUX
+========================================= */
 :root {
     --background-color: #c7b055;
     --primary-color: #ffffff;
@@ -15,50 +18,193 @@ section {
     margin-top: 15px;
 }
 
+/* =========================================
+   STRUCTURE PRINCIPALE (2 COLONNES)
+========================================= */
 .home {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: rgb(247, 246, 241);
-    padding: 20px;
-    gap: 40px; 
-    flex-wrap: wrap; 
+    justify-content: space-between;
+    background: rgb(247, 246, 241); /* Ton fond clair personnalisé */
+    padding: 50px 8%;
+    gap: 2rem;
+    min-height: 80vh;
+}
+
+.home-content {
+    flex: 1;
+    max-width: 60%;
+}
+
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 40%;
+}
+
+/* =========================================
+   TYPOGRAPHIE ET TEXTES
+========================================= */
+.home-content h1 {
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--black1);
 }
 
 .home-content h3 {
     font-size: 2rem;
     font-weight: 700;
+    color: var(--black1);
 }
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 1rem;
 }
 
-span {
-    color: var(--gold3);
-}
-.home-content {
-    max-width: 600px;
-}
-
-.home-content h1 {
-    font-size: 3.6rem;
-    font-weight: 600;
-    line-height: 1.3;
+/* Nouveau style pour ton H2 (Future Data Engineer...) */
+.home-content h2 {
+    font-size: 1.4rem;
+    color: var(--black2);
+    margin: 10px 0 20px 0;
 }
 
-.home-img img {
-     width: 25vw;
-    max-width: 300px; 
-    animation: floatImage 4s ease-in-out infinite;
-    border-radius: 20%;
-    will-change: transform;
+.home-content span {
+    color: var(--gold3); /* Ta couleur dorée pour mettre en valeur les mots */
 }
 
 .home-content p {
     font-size: 1rem;
+    line-height: 1.6;
+    color: var(--black3);
+}
+/* Le style et l'animation de la phrase d'accroche */
+.text-dark {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--black2);
+    margin-bottom: 15px;
+    
+    /* Préparation de l'animation */
+    opacity: 0; /* Invisible au départ */
+    transform: translateX(-30px); /* Décalé vers la gauche au départ */
+    
+    /* Lancement de l'animation (dure 1 seconde, démarre après un petit délai de 0.3s) */
+    animation: slideInFade 1s ease-out 0.3s forwards;
 }
 
+/* La recette de l'animation */
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1; /* Devient totalement visible */
+        transform: translateX(0); /* Revient à sa place normale */
+    }
+}
+
+/* =========================================
+   IMAGE ET ANIMATION
+========================================= */
+.home-img img {
+    width: 100%;
+    max-width: 350px; 
+    border-radius: 20%; /* Ton style de bordure original */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    animation: floatImage 4s ease-in-out infinite; /* Ton animation */
+    will-change: transform;
+}
+
+/* Définition de ton animation flottante (au cas où elle n'était pas déclarée) */
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* =========================================
+   TIMELINE DE CARRIÈRE (Progression)
+========================================= */
+.career-timeline {
+    display: flex;
+    align-items: flex-start; /* Aligne tout par le haut */
+    justify-content: flex-start;
+    margin: 40px 0; /* Un peu plus d'espace autour */
+    gap: 5px;
+    flex-wrap: wrap; 
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90px; /* Largeur fixe pour stabiliser le texte */
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--black3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+    border: 2px solid #eaeaea; /* Petite bordure pour faire ressortir le cercle */
+}
+
+.step-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--black3); /* Texte en foncé pour la lisibilité */
+    line-height: 1.2;
+}
+
+/* Le chemin entre les étapes */
+.timeline-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15px; /* Pousse le texte pour l'aligner avec les cercles */
+    width: 80px;
+}
+
+.path-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold2); /* Doré pour la transition */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* L'objectif final corrigé (Contraste fort) */
+.highlight-step .step-icon {
+    background-color: var(--gold2); /* Un vrai fond doré */
+    color: var(--primary-color); /* Icône blanche */
+    border: none;
+    box-shadow: 0 4px 15px rgba(179, 123, 0, 0.4);
+    transform: scale(1.1); /* Rend le dernier cercle légèrement plus grand */
+}
+
+.highlight-step .step-text {
+    color: var(--gold2); /* Le texte final en doré pour marquer l'accomplissement */
+}
+
+/* =========================================
+   RÉSEAUX SOCIAUX
+========================================= */
 .social a {
     display: inline-flex;
     justify-content: center;
@@ -70,7 +216,7 @@ span {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--black1);
-    margin: 2rem 1rem 1rem 0;
+    margin: 1.5rem 1rem 1rem 0;
     transition: 0.5s ease;
     text-decoration: none;
 }
@@ -81,15 +227,22 @@ span {
     color: var(--gold4);
     box-shadow: 0 0 10px var(--gold4);
 }
-/* === Home Section (desktop) === */
-/* Ton CSS actuel reste tel quel */
 
-/* === Media Queries Tablette (max-width: 1024px) === */
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+========================================= */
+
+/* Tablette (max-width: 1024px) */
 @media (max-width: 1024px) {
     .home {
-        flex-direction: column;
+        flex-direction: column; /* On repasse sur une seule colonne */
+        text-align: center;
         gap: 30px;
-        padding: 20px;
+        padding: 40px 20px;
+    }
+
+    .home-content, .home-img {
+        max-width: 100%;
     }
 
     .home-content h1 {
@@ -100,50 +253,38 @@ span {
         font-size: 1.8rem;
     }
 
-    .home-content p {
-        font-size: 0.9rem;
+    /* On centre la timeline sur tablette */
+    .career-timeline {
+        justify-content: center; 
     }
 
     .home-img img {
         width: 40vw;
-        max-width: 250px;
-    }
-
-    .social a {
-        width: 3.5rem;
-        height: 3.5rem;
-        font-size: 1.8rem;
-        margin: 1.5rem 0.5rem 1rem 0;
+        max-width: 300px;
     }
 }
 
-/* === Media Queries Mobile (max-width: 768px) === */
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .home {
-        flex-direction: column; /* texte au-dessus de l'image */
-        gap: 20px;
-        padding: 15px;
+        padding: 20px 15px;
     }
 
     .home-content h1 {
         font-size: 2.5rem;
-        text-align: center;
     }
 
     .home-content h3 {
         font-size: 1.5rem;
-        text-align: center;
     }
 
-    .home-content p {
-        font-size: 0.9rem;
-        text-align: center;
+    .home-img {
+        order: -1; /* Place l'image au-dessus du texte sur mobile */
+        margin-bottom: 20px;
     }
 
     .home-img img {
         width: 60vw;
-        max-width: none;
-        border-radius: 20%;
     }
 
     .social a {
@@ -151,5 +292,24 @@ span {
         height: 3rem;
         font-size: 1.5rem;
         margin: 1rem 0.5rem;
+    }
+
+    /* Ajustement de la timeline à la verticale pour les petits écrans */
+    .career-timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .timeline-path {
+        transform: rotate(90deg); /* La flèche pointe vers le bas */
+        margin: 5px 0;
+    }
+
+    .path-text {
+        transform: rotate(-90deg); /* Remet le texte à l'endroit */
+        position: absolute;
+        left: 30px;
+        width: max-content;
     }
 }

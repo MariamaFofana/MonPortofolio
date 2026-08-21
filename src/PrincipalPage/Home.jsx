@@ -1,19 +1,17 @@
 import React from 'react';
-import Navbar from '../Components/Navbar/Navbar';
-import Footer from '../Components/Footer/Footer';
 import Contact from '../Components/Contact/Contact';
 import Header from '../Components/Header/Header';
 import About from '../Components/About/About';
 import CVitae from '../Components/CVitae/CVitae';
 import Projets from '../Components/Projets/Projets';
 import News from '../Components/News/News';
+import Loisirs from '../Components/Loisirs/loisir';
 
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Header />
-       <News />
+      <News />
       <section id="About">
         <About />
       </section>
@@ -26,7 +24,9 @@ const Home = () => {
       <section id="Contact">
         <Contact />
       </section>
-      <Footer />
+      <section id="Loisirs">
+        <Loisirs />
+      </section>
     </>
   );
 };

@@ -1,115 +1,119 @@
-:root {
-    --Arriere: #c7b055;
-    --PrimaryColor: #ffffff;
-    --gradientColor: linear-gradient(to-right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
-    --or1: #b37b00;
-    --or2: #bf8600;
-    --or3: #cb9000;
-    --or4: #fcba3a;
-    --black1: #000000;
-    --black2: #453312;
-    --black3: #261d0d;
-}
-
 .projets-section {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    background: var(--Arriere);
+  background: var(--Arriere);
+  padding: 4rem 2rem;
+  min-height: 100vh;
 }
 
 .containers {
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projets-heading-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.projets-subtitle {
+  color: var(--black2);
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .projets-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 40px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .projet-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border: 1px solid var(--black1);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--primary-color, #ffffff);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(203, 144, 0, 0.15); /* Léger rappel doré */
+  position: relative;
+  overflow: hidden;
 }
 
 .projet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(203, 144, 0, 0.15);
+  border-color: var(--gold3);
 }
 
 .projet-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
 }
 
 .projet-num {
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--black1);
-    -webkit-text-stroke: 1px black;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold3);
+  opacity: 0.8;
 }
 
-.projet-link i {
-    font-size: 20px;
-    color: var(--black1);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.projet-link {
+  font-size: 1.4rem;
+  color: var(--black3);
+  background: var(--gold1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .projet-link:hover {
-    color: black;
+  background: var(--gold3);
+  color: var(--primary-color);
 }
 
 .projet-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--black1);
+  font-size: 1.2rem;
+  color: var(--black3);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
 }
 
 .projet-description {
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--black2);
+  font-size: 0.9rem;
+  color: var(--black2);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Style des tags de technologies */
+.projet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.projet-tag {
+  background: var(--gold1);
+  color: var(--gold3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(203, 144, 0, 0.2);
 }
 
 .projet-divider {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    width: 100%;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .projets-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .projets-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    .projet-description {
-        font-size: 15px;
-    }
-    .projet-title {
-        font-size: 20px;
-    }
-    .projet-num {
-        font-size: 36px;
-    }
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--gold3), transparent);
+  border-radius: 2px;
 }
