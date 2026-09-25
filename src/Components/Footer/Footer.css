@@ -1,20 +1,8 @@
-:root {
-  --Arriere: #c7b055;
-  --PrimaryColor: #ffffff;
-  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
-  --or1: #b37b00;
-  --or2: #bf8600; /* Ajouté ici pour éviter l'erreur d'affichage */
-  --or3: #cb9000;
-  --or4: #fcba3a;
-  --black1: #000000;
-  --black2: #453312;
-  --black3: #261d0d;
-}
-
 .footer {
-  background: rgba(221, 214, 179, 0.664);
+  background: rgba(248, 240, 202, 0.664);
   margin-top: 40px;
   padding: 30px 20px;
+    box-shadow: 0 0 10px rgba(237, 184, 7, 0.45);
 }
 
 /* Style pour le conteneur et l'image du logo */
@@ -26,7 +14,7 @@
 }
 
 .footer-logo {
-  max-width: 140px; /* Ajuste cette valeur selon la taille souhaitée de ton logo */
+  max-width: 140px; 
   height: auto;
   display: block;
 }

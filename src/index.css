@@ -1,9 +1,15 @@
+html {
+  scroll-behavior: smooth; /* Essentiel pour le défilement fluide vers les ancres */
+}
+
 body {
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000; /* Fond noir par défaut de ton portfolio */
+  color: #ffffff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

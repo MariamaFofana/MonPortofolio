@@ -2,16 +2,37 @@
   background: var(--Arriere);
   padding: 4rem 2rem;
   min-height: 100vh;
+  position: relative;
 }
 
 .containers {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
 .projets-heading-container {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.projets-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(203, 144, 0, 0.08);
+  color: var(--or3);
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  border: 1px solid rgba(203, 144, 0, 0.25);
+}
+
+.heading span {
+  color: var(--or3);
 }
 
 .projets-subtitle {
@@ -20,69 +41,77 @@
   margin-top: 0.5rem;
 }
 
-.projets-grid {
+/* =======GRILLE : 3 COLONNES STRICTES PAR PAGE========== */
+
+.projets-grid-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-.projet-card {
-  background: var(--primary-color, #ffffff);
-  border-radius: 12px;
+@media screen and (max-width: 1024px) {
+  .projets-grid-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projets-grid-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========STYLE DE CHAQUE CARTE INDIVIDUELLE========= */
+
+.projet-card-item {
+  background: var(--PrimaryColor);
+  border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(203, 144, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid rgba(203, 144, 0, 0.15); /* Léger rappel doré */
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projet-card:hover {
+.projet-card-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(203, 144, 0, 0.15);
-  border-color: var(--gold3);
+  box-shadow: 0 15px 35px rgba(203, 144, 0, 0.15);
+  border-color: var(--or3);
 }
 
-.projet-header {
+.projet-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.projet-num {
-  font-size: 1.8rem;
+.projet-num-badge {
+  font-size: 1.2rem;
   font-weight: 800;
-  color: var(--gold3);
-  opacity: 0.8;
+  color: var(--or3);
 }
 
-.projet-link {
-  font-size: 1.4rem;
-  color: var(--black3);
-  background: var(--gold1);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.projet-link:hover {
-  background: var(--gold3);
-  color: var(--primary-color);
+.projet-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--fond2);
+  color: var(--or3);
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(203, 144, 0, 0.15);
 }
 
 .projet-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--black3);
-  margin-bottom: 0.8rem;
   font-weight: 700;
+  margin-bottom: 0.8rem;
 }
 
 .projet-description {
@@ -93,27 +122,304 @@
   flex-grow: 1;
 }
 
-/* Style des tags de technologies */
+/* Tags de technologies sur les cartes */
 .projet-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .projet-tag {
-  background: var(--gold1);
-  color: var(--gold3);
+  background: var(--fond2);
+  color: var(--or3);
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
   border: 1px solid rgba(203, 144, 0, 0.2);
 }
 
-.projet-divider {
+/* Actions dans la carte */
+.projet-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(203, 144, 0, 0.1);
+}
+
+.btn-details {
+  background: var(--or3);
+  color: var(--PrimaryColor);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  background: var(--or2);
+  transform: translateY(-2px);
+}
+
+.btn-github-link {
+  color: var(--black3);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.btn-github-link:hover {
+  color: var(--or3);
+}
+
+/* ====== PAGINATION NUMÉROTÉE================ */
+
+.projets-number-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.pagination-num {
+  background: transparent;
+  border: 1px solid rgba(203, 144, 0, 0.3);
+  color: var(--black2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-num:hover,
+.pagination-num.active {
+  background: var(--or3);
+  color: var(--PrimaryColor);
+  border-color: var(--or3);
+  box-shadow: 0 0 12px rgba(203, 144, 0, 0.3);
+}
+
+/* ================FENÊTRE MODALE DE DÉTAIL=========== */
+
+.modal-image-container {
   width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, var(--gold3), transparent);
-  border-radius: 2px;
+  height: 300px;
+  max-height: 400px; 
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 144, 0, 0.3);
+  margin-bottom: 1rem;
+  background: var(--black3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: auto; 
+  max-height: 400px;
+  object-fit: contain; 
+  display: block;
+}
+
+.projet-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.projet-modal-content {
+  position: relative;
+  background: var(--PrimaryColor);
+  border: 1px solid rgba(203, 144, 0, 0.4);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--fond2);
+  border: none;
+  color: var(--or3);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--or3);
+  color: var(--PrimaryColor);
+}
+
+.modal-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--or3);
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  color: var(--black3);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+/* Barre de métadonnées (Année • Type • Durée) */
+.modal-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--or3);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: var(--fond2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(203, 144, 0, 0.2);
+}
+
+.modal-meta-bar i {
+  margin-right: 4px;
+}
+
+/* Boîte de flux pour l'architecture */
+.architecture-flow-box {
+  background: var(--black3);
+  color: var(--PrimaryColor);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  border-left: 4px solid var(--or3);
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+/* Ajustement des titres de blocs dans la modale */
+.modal-section-block {
+  margin-top: 1rem;
+}
+
+.modal-section-block h4 {
+  font-size: 0.95rem;
+  color: var(--black3);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.modal-section-block h4 i {
+  color: var(--or3);
+}
+
+.modal-section-block p {
+  font-size: 0.9rem;
+  color: var(--black2);
+  line-height: 1.5;
+}
+
+/* Liste des fonctionnalités dans la modale */
+.modal-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.modal-features-list li {
+  font-size: 0.88rem;
+  color: var(--black2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.modal-features-list li i {
+  color: var(--or3);
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.modal-tag {
+  background: var(--fond2);
+  color: var(--or3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(203, 144, 0, 0.2);
+}
+
+.modal-actions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal-github-btn {
+  background: var(--black3);
+  color: var(--PrimaryColor);
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.modal-github-btn:hover {
+  background: var(--or3);
 }

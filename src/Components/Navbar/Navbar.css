@@ -2,11 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #ffffff; 
+  color: #000;
   box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
   height: 100px;
   padding: 20px 10px;
   margin: 0 20px;
-  position: relative; /* Important pour que le menu mobile s'aligne bien en dessous */
+  position: relative; 
+  border-radius: 0 0 15px 15px;
 }
 
 .nav-links {
@@ -37,12 +40,12 @@
 .nav_item {
   background-color: var(--or1);
   border-radius: 10px;
-  padding: 5px 10px; /* Un peu plus de hauteur pour l'esthétique */
+  padding: 5px 10px;
   transition: 0.3s;
 }
 
 .nav_item:hover {
-  background-color: var(--or2); /* Correction de la couleur au survol */
+  background-color: var(--or2);
 }
 
 /* === NOUVEAUX STYLES POUR LE LOGO IMAGE === */
@@ -53,14 +56,56 @@
 }
 
 .logo-img {
-  height: 85px; /* S'adapte presque à la hauteur de la Navbar */
+  height: 85px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .logo-img:hover {
-  transform: scale(1.05); /* Léger effet de zoom dynamique */
+  transform: scale(1.05);
+}
+/* === STYLE DU BOUTON BILINGUE DANS LA NAVBAR === */
+.nav-lang-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+
+.lang-toggle-btn {
+  background: rgba(203, 144, 0, 0.1);
+  border: 1px solid rgba(203, 144, 0, 0.3);
+  color: var(--black1);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+  background: var(--or3);
+  color: var(--black1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(203, 144, 0, 0.4);
+}
+
+/* Ajustement sur les petits écrans mobiles */
+@media screen and (max-width: 768px) {
+  .nav-lang-container {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  
+  .lang-toggle-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+  }
 }
 
 /* On cache l'icône du menu burger sur grand écran */
@@ -102,8 +147,9 @@
   .navbar {
     margin: 0; 
     padding: 10px 20px;
-    flex-direction: row; /* Garde le logo et le burger sur la même ligne */
+    flex-direction: row;
     align-items: center;
+    height: 80px; /* Hauteur fixe sur mobile pour bien caler le menu */
   }
 
   .logo {
@@ -112,7 +158,7 @@
   }
 
   .logo-img {
-    height: 60px; /* Un peu plus petit sur mobile */
+    height: 60px;
   }
 
   /* On cache la navigation classique par défaut */
@@ -121,28 +167,46 @@
   }
 
   .mobile_menu {
-    display: block; /* Le bouton burger devient visible */
+    display: block;
   }
 
-  /* Le menu qui s'ouvre au clic */
+  /* Le menu mobile : version chic, sombre et fluide */
   .active_menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--PrimaryColor);
+    background: var(--black1); /* Fond noir profond assorti au site */
+    border-bottom: 2px solid var(--gold); /* Fine ligne dorée élégante */
     width: 100%;
     position: absolute;
-    top: 80px; /* S'aligne juste sous la Navbar mobile */
+    top: 80px; /* S'aligne parfaitement sous la navbar mobile */
     left: 0;
     z-index: 999;
-    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
-    padding-bottom: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    animation: fadeIn 0.3s ease-in-out;
   }
 
   .active_menu li {
-    width: 100%;
+    width: 80%;
     text-align: center;
-    padding: 15px 0;
+    padding: 12px 0;
     margin: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  .active_menu li a {
+    color: var(--PrimaryColor); /* Texte blanc bien lisible */
+    font-size: 18px;
+  }
+
+  .active_menu li a:hover {
+    color: var(--gold); /* Survol doré */
+  }
+}
+
+/* Petite animation d'apparition fluide du menu mobile */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

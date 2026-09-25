@@ -1,31 +1,13 @@
-/* =========================================
-   VARIABLES ET GLOBAUX
-========================================= */
-:root {
-    --background-color: #c7b055;
-    --primary-color: #ffffff;
-    --gradient-color: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
-    --gold1: #b37b00;
-    --gold2: #bf8600;
-    --gold3: #cb9000;
-    --gold4: #fcba3a;
-    --black1: #000000;
-    --black2: #453312;
-    --black3: #261d0d;
-}
-
 section {
     margin-top: 15px;
 }
 
-/* =========================================
-   STRUCTURE PRINCIPALE (2 COLONNES)
-========================================= */
+/* =========  STRUCTURE PRINCIPALE (2 COLONNES)======== */
 .home {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(247, 246, 241); /* Ton fond clair personnalisé */
+    background: rgb(247, 246, 241);
     padding: 50px 8%;
     gap: 2rem;
     min-height: 80vh;
@@ -43,9 +25,7 @@ section {
     max-width: 40%;
 }
 
-/* =========================================
-   TYPOGRAPHIE ET TEXTES
-========================================= */
+/* ======  TYPOGRAPHIE ET TEXTES======= */
 .home-content h1 {
     font-size: 3.6rem;
     font-weight: 600;
@@ -63,7 +43,6 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Nouveau style pour ton H2 (Future Data Engineer...) */
 .home-content h2 {
     font-size: 1.4rem;
     color: var(--black2);
@@ -71,7 +50,7 @@ section {
 }
 
 .home-content span {
-    color: var(--gold3); /* Ta couleur dorée pour mettre en valeur les mots */
+    color: var(--or3); 
 }
 
 .home-content p {
@@ -79,19 +58,14 @@ section {
     line-height: 1.6;
     color: var(--black3);
 }
-/* Le style et l'animation de la phrase d'accroche */
 .text-dark {
     display: inline-block;
     font-size: 0.9rem;
     font-style: italic;
     color: var(--black2);
     margin-bottom: 15px;
-    
-    /* Préparation de l'animation */
-    opacity: 0; /* Invisible au départ */
-    transform: translateX(-30px); /* Décalé vers la gauche au départ */
-    
-    /* Lancement de l'animation (dure 1 seconde, démarre après un petit délai de 0.3s) */
+    opacity: 0; 
+    transform: translateX(-30px); 
     animation: slideInFade 1s ease-out 0.3s forwards;
 }
 
@@ -102,39 +76,35 @@ section {
         transform: translateX(-30px);
     }
     100% {
-        opacity: 1; /* Devient totalement visible */
-        transform: translateX(0); /* Revient à sa place normale */
+        opacity: 1; 
+        transform: translateX(0); 
     }
 }
 
-/* =========================================
-   IMAGE ET ANIMATION
-========================================= */
+/* ======IMAGE ET ANIMATION=========== */
 .home-img img {
     width: 100%;
     max-width: 350px; 
-    border-radius: 20%; /* Ton style de bordure original */
+    border-radius: 20%; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     object-fit: cover;
-    animation: floatImage 4s ease-in-out infinite; /* Ton animation */
+    animation: floatImage 4s ease-in-out infinite; 
     will-change: transform;
 }
 
-/* Définition de ton animation flottante (au cas où elle n'était pas déclarée) */
+/* Définition de ton animation flottante  */
 @keyframes floatImage {
     0% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0); }
 }
 
-/* =========================================
-   TIMELINE DE CARRIÈRE (Progression)
-========================================= */
+/* ===========  TIMELINE DE CARRIÈRE ====== */
 .career-timeline {
     display: flex;
-    align-items: flex-start; /* Aligne tout par le haut */
+    align-items: flex-start; 
     justify-content: flex-start;
-    margin: 40px 0; /* Un peu plus d'espace autour */
+    margin: 40px 0; 
     gap: 5px;
     flex-wrap: wrap; 
 }
@@ -144,13 +114,13 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 90px; /* Largeur fixe pour stabiliser le texte */
+    width: 90px; 
 }
 
 .step-icon {
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background-color: var(--PrimaryColor);
     color: var(--black3);
     border-radius: 50%;
     display: flex;
@@ -159,13 +129,13 @@ section {
     font-size: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     margin-bottom: 10px;
-    border: 2px solid #eaeaea; /* Petite bordure pour faire ressortir le cercle */
+    border: 2px solid #eaeaea; 
 }
 
 .step-text {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--black3); /* Texte en foncé pour la lisibilité */
+    color: var(--black3); 
     line-height: 1.2;
 }
 
@@ -175,7 +145,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 15px; /* Pousse le texte pour l'aligner avec les cercles */
+    padding-top: 15px; 
     width: 80px;
 }
 
@@ -184,27 +154,25 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--gold2); /* Doré pour la transition */
+    color: var(--or2); 
     margin-bottom: 5px;
     text-align: center;
 }
 
 /* L'objectif final corrigé (Contraste fort) */
 .highlight-step .step-icon {
-    background-color: var(--gold2); /* Un vrai fond doré */
-    color: var(--primary-color); /* Icône blanche */
+    background-color: var(--or2); 
+    color: var(--PrimaryColor);
     border: none;
     box-shadow: 0 4px 15px rgba(179, 123, 0, 0.4);
-    transform: scale(1.1); /* Rend le dernier cercle légèrement plus grand */
+    transform: scale(1.1); 
 }
 
 .highlight-step .step-text {
-    color: var(--gold2); /* Le texte final en doré pour marquer l'accomplissement */
+    color: var(--or2); 
 }
 
-/* =========================================
-   RÉSEAUX SOCIAUX
-========================================= */
+/* ======RÉSEAUX SOCIAUX=========== */
 .social a {
     display: inline-flex;
     justify-content: center;
@@ -224,18 +192,16 @@ section {
 .social a:hover,
 .social a:focus {
     background: var(--black1);
-    color: var(--gold4);
-    box-shadow: 0 0 10px var(--gold4);
+    color: var(--or4);
+    box-shadow: 0 0 10px var(--or4);
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVE)
-========================================= */
+/* ======= MEDIA QUERIES (RESPONSIVE)========== */
 
 /* Tablette (max-width: 1024px) */
 @media (max-width: 1024px) {
     .home {
-        flex-direction: column; /* On repasse sur une seule colonne */
+        flex-direction: column; 
         text-align: center;
         gap: 30px;
         padding: 40px 20px;
@@ -279,7 +245,7 @@ section {
     }
 
     .home-img {
-        order: -1; /* Place l'image au-dessus du texte sur mobile */
+        order: -1; 
         margin-bottom: 20px;
     }
 
@@ -302,12 +268,12 @@ section {
     }
 
     .timeline-path {
-        transform: rotate(90deg); /* La flèche pointe vers le bas */
+        transform: rotate(90deg); 
         margin: 5px 0;
     }
 
     .path-text {
-        transform: rotate(-90deg); /* Remet le texte à l'endroit */
+        transform: rotate(-90deg); 
         position: absolute;
         left: 30px;
         width: max-content;

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import emailjs from "@emailjs/browser";
-
-const Contact = () => {
+import { translations } from "../Translations/translations"; 
+const Contact = ({ lang = "fr" }) => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+
+  const t = translations[lang].contact;
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -34,8 +36,8 @@ const Contact = () => {
   if (submitted) {
     return (
       <div className="reponse">
-        <h2>Merci bien !</h2>
-        <p>Je vous répondrai dans les plus brefs délais.</p>
+        <h2>{t.successTitle}</h2>
+        <p>{t.successText}</p>
       </div>
     );
   }
@@ -43,52 +45,51 @@ const Contact = () => {
   return (
     <section className="contact-section">
       <h2>
-        <i className="ri-chat-smile-3-line"></i> Souhaitez-vous laisser un
-        message !
+        <i className="ri-chat-smile-3-line"></i> {t.title}
       </h2>
       <div className="subscribe">
         <form onSubmit={sendEmail} method="POST">
           <div className="mb-3">
             <input
               type="text"
-              placeholder="Votre nom"
+              placeholder={t.namePlaceholder}
               name="from_name"
               required
               className="input-field"
-              aria-label="Votre nom"
+              aria-label={t.namePlaceholder}
             />
           </div>
           <div className="mb-3">
             <input
               type="email"
-              placeholder="Email"
+              placeholder={t.emailPlaceholder}
               name="from_email"
               required
               className="input-field"
-              aria-label="Votre email"
+              aria-label={t.emailPlaceholder}
             />
           </div>
           <div className="mb-3">
             <textarea
-              placeholder="Votre message"
+              placeholder={t.messagePlaceholder}
               name="message"
               required
               className="textarea-field"
-              aria-label="Votre message"
+              aria-label={t.messagePlaceholder}
             />
           </div>
           <div className="mb-3">
             <button
               className="buttonS"
               type="submit"
-              aria-label="Envoyer le message"
+              aria-label={t.sendBtn}
             >
-              Envoyer
+              {t.sendBtn}
             </button>
           </div>
           {error && (
             <p className="error-message">
-              Une erreur est survenue lors de l'envoi.
+              {t.errorMsg}
             </p>
           )}
         </form>

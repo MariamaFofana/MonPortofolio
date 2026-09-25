@@ -1,18 +1,10 @@
+/* ========  1. POLICES & VARIABLES GLOBALES (Thème Noir, Blanc, Or) ======== */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 :root {
+  --gold: #edb807;        
   --Arriere: #c7b055;
   --PrimaryColor: #ffffff;
-  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
   --or1: #b37b00;
   --or2: #bf8600;
   --or3: #cb9000;
@@ -20,6 +12,12 @@
   --black1: #000000;
   --black2: #453312;
   --black3: #261d0d;
+  --fond2: #faf4e0;
+}
+
+/* ========== 2. RESET CSS & CONFIGURATION DE BASE ========== */
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -32,26 +30,10 @@
   outline: none;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #b37b00;
-  transition: 0.5s;
-}
-
-.icon:hover {
-  cursor: pointer;
-  background-color: #b37b00;
+body {
+  background-color: var(--primaryColor);
   color: var(--PrimaryColor);
-}
-
-.flexSB {
-  display: flex;
-  justify-content: space-between;
+  overflow-x: hidden;
 }
 
 li {
@@ -60,6 +42,7 @@ li {
 
 button {
   border: none;
+  cursor: pointer;
 }
 
 p {
@@ -70,36 +53,30 @@ p {
   color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ==========   3. CLASSES UTILITAIRES GLOBALES ============ */
+.flexSB {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: var(--or1);
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon:hover {
+  cursor: pointer;
+  background-color: var(--or1);
+  color: var(--PrimaryColor);
 }
 
-html {
-  scroll-behavior: smooth;
+.highlight-text {
+  color: var(--gold);
 }

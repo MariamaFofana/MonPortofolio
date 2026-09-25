@@ -1,31 +1,42 @@
 import React from 'react';
-import Contact from '../Components/Contact/Contact';
 import Header from '../Components/Header/Header';
+import News from '../Components/News/News';
 import About from '../Components/About/About';
 import CVitae from '../Components/CVitae/CVitae';
+import Certification from '../Components/Certification/Certification';
 import Projets from '../Components/Projets/Projets';
-import News from '../Components/News/News';
 import Loisirs from '../Components/Loisirs/loisir';
+import Contact from '../Components/Contact/Contact';
 
-const Home = () => {
+// On récupère `lang` depuis App.js via les props de la route <Home lang={lang} />
+const Home = ({ lang }) => {
   return (
     <>
-      <Header />
-      <News />
+      <Header lang={lang} />
+      <News lang={lang} />
+      
       <section id="About">
-        <About />
+        <About lang={lang} />
       </section>
+      
       <section id="CVitae">
-        <CVitae />
+        <CVitae lang={lang} />
       </section>
+      
+      <section id="Certification">
+        <Certification lang={lang} />
+      </section>
+      
       <section id="Projets">
-        <Projets />
+        <Projets lang={lang} />
       </section>
-      <section id="Contact">
-        <Contact />
-      </section>
+      
       <section id="Loisirs">
-        <Loisirs />
+        <Loisirs lang={lang} />
+      </section>
+      
+      <section id="Contact">
+        <Contact lang={lang} />
       </section>
     </>
   );

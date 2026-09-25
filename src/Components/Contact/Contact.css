@@ -1,23 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
-:root {
-  --Arriere: #c7b055;
-  --PrimaryColor: #ffffff;
-  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
-  --gold1: #fbf7ee;
-  --or1: #b37b00;
-  --or2: #bf8600;
-  --or3: #cb9000;
-  --or4: #fcba3a;
-  --black1: #000000;
-  --black2: #453312;
-  --black3: #261d0d;
-}
 
 .contact-section h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: var(--black3);
+  color: var(--or1);
 }
 
 body, input, textarea, button {
@@ -95,14 +80,15 @@ form {
 }
 
 .contact-section {
-  padding: 40px 20px;
-  background-color: var(--gold1);
+  padding: 60px 20px;
+  background: radial-gradient(circle at 80% 20%, rgba(237, 184, 7, 0.08) 0%, transparent 60%),
+              linear-gradient(135deg, #ffffff 0%, #fcfbf7 100%);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: var(--black1); /* Le texte général devient sombre pour contraster sur le blanc */
 }
-
 .reponse {
   text-align: center;
   padding: 30px;

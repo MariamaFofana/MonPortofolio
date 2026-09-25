@@ -1,63 +1,77 @@
 import React from "react";
 import heroImg from "../../IMAGES/Photo1.jpg";
 import "../Header/Header.css";
+import { translations } from "../Translations/translations";
 
-const Header = () => {
+const Header = ({ lang = "fr" }) => {
+  // Récupération des textes selon la langue active
+  const t = translations[lang].home;
+
   return (
     <section className="home" id="home">
       {/* COLONNE GAUCHE : TEXTE & TIMELINE */}
       <div className="home-content">
-        <span className="text-dark">Turning Data into Meaningful Solutions.</span>
-        <h3>Bonjour, je suis</h3>
+        <span className="text-dark">{t.slogan}</span>
+        <h3>{t.greeting}</h3>
         <h1>Mariama Fofana</h1>
         <h3>
-          Étudiante en <span>Ingénierie Informatique</span> <br />
-          spécialisée en <span>Data Science & Intelligence Artificielle</span>
+          {lang === "fr" ? (
+            <>
+              Étudiante en <span>Ingénierie Informatique</span> <br />
+              spécialisée en <span>Data Science & Intelligence Artificielle</span>
+            </>
+          ) : (
+            <>
+              Computer Engineering Student <br />
+              specialized in <span>Data Science & Artificial Intelligence</span>
+            </>
+          )}
         </h3>
         <p>
-          Passionnée par les données et les technologies, je conçois des solutions alliant ingénierie logicielle et analyse de données. Mon objectif : transformer la donnée brute en décisions stratégiques.
+          {t.desc1}
           <br /><br />
-          Ce portfolio est un espace où je partage mes réalisations et mes compétences. Il reflète mon parcours, mes projets techniques, ainsi que les passions qui m'animent au quotidien.
-        </p>      
+          {t.desc2}
+        </p>       
+      
         {/* --- DÉBUT DE LA TIMELINE DE CARRIÈRE --- */}
         <div className="career-timeline">
           {/* Étape 1 */}
           <div className="timeline-step">
             <div className="step-icon"><i className="ri-graduation-cap-fill"></i></div>
-            <span className="step-text">Sortie d'école</span>
+            <span className="step-text">{t.timeline.step1}</span>
           </div>
           
           <div className="timeline-path">
-            <span className="path-text">Fondations</span>
+            <span className="path-text">{t.timeline.path1}</span>
             <i className="ri-arrow-right-s-line"></i>
           </div>
 
           {/* Étape 2 */}
           <div className="timeline-step">
             <div className="step-icon"><i className="ri-database-2-fill"></i></div>
-            <span className="step-text">Data Engineer</span>
+            <span className="step-text">{t.timeline.step2}</span>
           </div>
 
           <div className="timeline-path">
-            <span className="path-text">Vision Métier</span>
+            <span className="path-text">{t.timeline.path2}</span>
             <i className="ri-arrow-right-s-line"></i>
           </div>
 
           {/* Étape 3 */}
           <div className="timeline-step">
             <div className="step-icon"><i className="ri-bar-chart-box-fill"></i></div>
-            <span className="step-text">Data Analyst</span>
+            <span className="step-text">{t.timeline.step3}</span>
           </div>
 
           <div className="timeline-path">
-            <span className="path-text">Stratégie & Impact</span>
+            <span className="path-text">{t.timeline.path3}</span>
             <i className="ri-arrow-right-s-line"></i>
           </div>
 
           {/* Étape 4 (Objectif Final) */}
           <div className="timeline-step highlight-step">
             <div className="step-icon"><i className="ri-rocket-2-fill"></i></div>
-            <span className="step-text">Leader Consulting Data</span>
+            <span className="step-text">{t.timeline.step4}</span>
           </div>
         </div>
         {/* --- FIN DE LA TIMELINE --- */}

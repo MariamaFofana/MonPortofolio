@@ -1,93 +1,206 @@
-import React from 'react';
-import './Projets.css';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import "./Projets.css";
+import { projetsData } from "./projetsData";
+import { motion, AnimatePresence } from "framer-motion";
 
-const services = [
-  {
-    num: "01",
-    title: "Cloud Healthcare Unit – Data Warehouse & ETL",
-    description: "Conception d'un système décisionnel hospitalier : modélisation dimensionnelle, pipelines ETL sous Talend et intégration de données hétérogènes (PostgreSQL, fichiers CSV, FTP).",
-    technologies: ["Talend", "PostgreSQL", "Data Warehouse", "ETL", "Modélisation"],
-    href: "https://github.com/MariamaFofana" 
-  },
-  {
-    num: "02",
-    title: "CHU Analytics – Business Intelligence & Power BI",
-    description: "Création de tableaux de bord décisionnels pour le suivi des taux d'hospitalisation, de consultation, de mortalité et de satisfaction patient.",
-    technologies: ["Power BI", "Data Visualization", "DAX", "Reporting"],
-    href: "https://github.com/MariamaFofana"
-  },
-  {
-    num: "03",
-    title: "EasySave – Logiciel de Sauvegarde multi-versions",
-    description: "Développement en équipe de logiciels de sauvegarde (versions console .Net et graphique WPF) avec gestion de files d'attente, chiffrement CryptoSoft et centralisation Docker.",
-    technologies: ["C#", ".Net 8.0", "WPF", "Docker", "Architecture MVC/MVVM"],
-    href: "https://github.com/MariamaFofana"
-  },
-  {
-    num: "04",
-    title: "GreenReso – Infrastructure SI & Cybersécurité",
-    description: "Conception d'une architecture réseau sécurisée, modélisation Active Directory, gestion des droits NTFS par scripts PowerShell et stratégie de sensibilisation aux risques.",
-    technologies: ["Active Directory", "PowerShell", "Réseau", "Cybersécurité", "GPO"],
-    href: "https://github.com/MariamaFofana"
-  },
-  {
-    num: "05",
-    title: "PAD – Analyse Prédictive & Exploration de Données",
-    description: "Projet d’analyse exploratoire de données (EDA), data cleaning et modélisation statistique sur le dataset Titanic.",
-    technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
-    href: "https://github.com/MariamaFofana/PAD"
-  },
-  {
-    num: "06",
-    title: "Mon Portfolio – React.js & UI/UX",
-    description: "Portfolio personnel interactif et responsive pour valoriser mon parcours d'ingénieure, mes compétences techniques et mes valeurs.",
-    technologies: ["React.js", "CSS3", "JavaScript", "Framer Motion"],
-    href: "https://github.com/MariamaFofana/MonPortofolio"
-  }
-];
+const Projets = ({ lang = "fr" }) => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-const Projets = () => {
+  // Textes fixes de l'interface traduits
+  const uiTexts = {
+    fr: {
+      badge: "PORTFOLIO TECHNIQUE",
+      titleMain: "Mes ",
+      titleSpan: "Projets",
+      subtitle: "Un aperçu de mes réalisations en Ingénierie Data, IA et Systèmes",
+      detailsBtn: "En savoir plus",
+      githubBtn: "GitHub",
+      modalContext: "💡 Contexte & Problématique",
+      modalSolution: "🛠 Solution & Architecture",
+      modalFeatures: "🎯 Réalisations & Fonctionnalités clés",
+      modalResults: "📊 Résultats",
+      modalLink: "Voir le projet sur GitHub",
+      closeLabel: "Fermer"
+    },
+    en: {
+      badge: "TECHNICAL PORTFOLIO",
+      titleMain: "My ",
+      titleSpan: "Projects",
+      subtitle: "An overview of my achievements in Data Engineering, AI, and Systems",
+      detailsBtn: "Learn more",
+      githubBtn: "GitHub",
+      modalContext: "💡 Context & Problem",
+      modalSolution: "🛠 Solution & Architecture",
+      modalFeatures: "🎯 Key Features & Achievements",
+      modalResults: "📊 Results",
+      modalLink: "View project on GitHub",
+      closeLabel: "Close"
+    }
+  };
+
+  const t = uiTexts[lang];
+  const currentProjects = projetsData[lang] || projetsData.fr;
+
+  // Configuration : 3 projets par page
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(currentProjects.length / itemsPerPage);
+
+  const startIndex = currentPage * itemsPerPage;
+  const pageProjects = currentProjects.slice(startIndex, startIndex + itemsPerPage);
+
   return (
     <section className="projets-section" id="projets">
       <div className="containers">
+        
+        {/* HEADER */}
         <div className="projets-heading-container">
-          <h2 className="heading">Mes <span>Projets</span></h2>
-          <p className="projets-subtitle">Un aperçu de mes réalisations académiques et techniques</p>
+          <div className="projets-badge">
+            <i className="ri-code-box-line"></i>
+            <span>{t.badge}</span>
+          </div>
+          <h2 className="heading">{t.titleMain}<span>{t.titleSpan}</span></h2>
+          <p className="projets-subtitle">{t.subtitle}</p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6, ease: "easeInOut" } }}
-          className="projets-grid"
+        {/* GRILLE DES 3 PROJETS DE LA PAGE ACTIVE */}
+        <motion.div 
+          key={currentPage + lang}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="projets-grid-page"
         >
-          {services.map((service, index) => (
-            <div key={index} className="projet-card">
-              <div className="projet-header">
-                <div className="projet-num">{service.num}</div>
-                {/* Utilisation de <a> avec target="_blank" pour les liens externes GitHub */}
-                <a href={service.href} target="_blank" rel="noopener noreferrer" className="projet-link">
-                  <i className="ri-github-fill"></i>
-                </a>
-              </div>
-              
-              <h3 className="projet-title">{service.title}</h3>
-              <p className="projet-description">{service.description}</p>
-              
-              {/* Affichage des technologies sous forme de badges */}
-              <div className="projet-tags">
-                {service.technologies.map((tech, i) => (
-                  <span key={i} className="projet-tag">{tech}</span>
-                ))}
+          {pageProjects.map((proj, idx) => (
+            <div key={idx} className="projet-card-item">
+              <div className="projet-top-row">
+                <span className="projet-num-badge">{proj.num}</span>
+                <span className="projet-category">{proj.category}</span>
               </div>
 
-              <div className="projet-divider"></div>
+              <h3 className="projet-title">{proj.title}</h3>
+              <p className="projet-description">{proj.shortDesc}</p>
+
+              <div className="projet-tags">
+                {proj.technologies.slice(0, 4).map((tech, i) => (
+                  <span key={i} className="projet-tag">{tech}</span>
+                ))}
+                {proj.technologies.length > 4 && <span className="projet-tag">+{proj.technologies.length - 4}</span>}
+              </div>
+
+              <div className="projet-card-actions">
+                <button className="btn-details" onClick={() => setSelectedProject(proj)}>
+                  {t.detailsBtn} <i className="ri-arrow-right-line"></i>
+                </button>
+                <a href={proj.href} target="_blank" rel="noopener noreferrer" className="btn-github-link">
+                  <i className="ri-github-fill"></i> {t.githubBtn}
+                </a>
+              </div>
             </div>
           ))}
         </motion.div>
+
+        {/* PAGINATION NUMÉROTÉE */}
+        <div className="projets-number-pagination">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              className={`pagination-num ${currentPage === idx ? "active" : ""}`}
+              onClick={() => setCurrentPage(idx)}
+            >
+              0{idx + 1}
+            </button>
+          ))}
+        </div>
+
       </div>
+
+      {/* ================= MODALE DE DÉTAIL DU PROJET ================= */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="projet-modal-overlay" onClick={() => setSelectedProject(null)}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="projet-modal-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="modal-close-btn" onClick={() => setSelectedProject(null)} aria-label={t.closeLabel}>
+                <i className="ri-close-line"></i>
+              </button>
+
+              <span className="modal-category">{selectedProject.category}</span>
+              <h3 className="modal-title">{selectedProject.title}</h3>
+
+              {/* MÉTADONNÉES */}
+              <div className="modal-meta-bar">
+                <span><i className="ri-calendar-line"></i> {selectedProject.year}</span>
+                <span>•</span>
+                <span><i className="ri-book-open-line"></i> {selectedProject.type}</span>
+                <span>•</span>
+                <span><i className="ri-time-line"></i> {selectedProject.duration}</span>
+              </div>
+
+              {/* IMAGE DU PROJET */}
+              {selectedProject.image && (
+                <div className="modal-image-container">
+                  <img src={selectedProject.image} alt={selectedProject.title} />
+                </div>
+              )}
+
+              {/* CONTEXTE & PROBLÉMATIQUE */}
+              <div className="modal-section-block">
+                <h4>{t.modalContext}</h4>
+                <p>{selectedProject.context}</p>
+              </div>
+
+              {/* SOLUTION & ARCHITECTURE */}
+              <div className="modal-section-block">
+                <h4>{t.modalSolution}</h4>
+                <div className="architecture-flow-box">
+                  {selectedProject.solution}
+                </div>
+              </div>
+
+              {/* FONCTIONNALITÉS */}
+              {selectedProject.features && selectedProject.features.length > 0 && (
+                <div className="modal-section-block">
+                  <h4>{t.modalFeatures}</h4>
+                  <ul className="modal-features-list">
+                    {selectedProject.features.map((feat, i) => (
+                      <li key={i}><i className="ri-check-line"></i> {feat}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* RÉSULTATS */}
+              <div className="modal-section-block">
+                <h4>{t.modalResults}</h4>
+                <p>{selectedProject.results}</p>
+              </div>
+
+              {/* TECHNOLOGIES */}
+              <div className="modal-tech-list">
+                {selectedProject.technologies.map((tech, i) => (
+                  <span key={i} className="modal-tag">{tech}</span>
+                ))}
+              </div>
+
+              {/* BOUTON GITHUB */}
+              <div className="modal-actions">
+                <a href={selectedProject.href} target="_blank" rel="noopener noreferrer" className="modal-github-btn">
+                  {t.modalLink} <i className="ri-external-link-line"></i>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
-}
+};
 
 export default Projets;

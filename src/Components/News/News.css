@@ -1,19 +1,18 @@
-/* =========================================
-   BANDEAU D'ANNONCE (NEWS)
-========================================= */
+/* ==========  BANDEAU D'ANNONCE (NEWS)========= */
 .news {
-  background-color: var(--gold4, #fcba3a);
-  color: var(--black3, #261d0d);
-  padding: 15px 30px;
-  margin: 0 8% 20px 8%; 
-  border-radius: 10px;
+  background: linear-gradient(135deg, var(--or2), var(--black3), var(--black2)); 
+  color: var(--PrimaryColor); 
+  padding: 20px 30px;
+  margin: 20px 8%; 
+  border-radius: 12px;
+  border: 1px solid var(--gold2); 
   text-align: center;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(252, 186, 58, 0.3); 
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
 }
 
 .news-link {
-  color: var(--black3, #261d0d);
+  color: var(--gold4); 
   text-decoration: underline;
   margin-left: 10px;
   font-weight: 700;
@@ -22,17 +21,15 @@
 }
 
 .news-link:hover {
-  color: var(--primary-color, #ffffff); 
+  color: var(--PrimaryColor); 
 }
 
-/* =========================================
-   BLOCS DE LANGUE (EMPILÉS)
-========================================= */
+/* ========== BLOCS DE LANGUE ======== */
 .separator {
   display: none; 
 }
 
-.news-message {
+.news-container {
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -43,36 +40,33 @@
 
 .lang-block {
   display: block;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.95rem;
   animation: fadeIn 1.5s ease-in-out; 
 }
 
 /* Ligne de séparation esthétique entre le FR et le EN */
 .lang-block:first-child {
   padding-bottom: 12px;
-  border-bottom: 1px dashed rgba(44, 43, 40, 0.2);
+  border-bottom: 1px dashed rgba(252, 186, 58, 0.3); 
   width: 100%; 
   max-width: 800px;
 }
 
-/* =========================================
-   RESPONSIVE (Tablette & Mobile)
-========================================= */
+/* =====  RESPONSIVE (Tablette & Mobile)============ */
 @media (max-width: 768px) {
   .news {
-    margin: 0 5% 20px 5%;
+    margin: 15px 5%;
     padding: 15px;
   }
 
   .news-link {
     display: inline-block;
-    margin-top: 8px; /* Sépare légèrement le bouton du texte sur mobile */
+    margin-top: 5px; 
   }
 }
 
-/* =========================================
-   ANIMATIONS
-========================================= */
+/* ==========  ANIMATIONS============ */
 @keyframes fadeIn {
   from { 
     opacity: 0; 

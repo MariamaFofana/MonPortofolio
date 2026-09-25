@@ -1,28 +1,42 @@
 import React, { useRef } from "react";
 import "./Navbar.css";
-// Import de ton logo depuis le dossier IMAGES
 import logoRiiri from "../../IMAGES/MonLogo.png";
 
-const Navbar = () => {
+const Navbar = ({ lang, toggleLang }) => {
   const menuRef = useRef(null);
 
-  // Fonction pour afficher/masquer le menu sur mobile
   const menuToggle = () => {
     menuRef.current.classList.toggle("active_menu");
   };
 
-  // Les éléments de ta navigation principale
+  const navTexts = {
+    fr: {
+      about: "Qui suis-je",
+      projects: "Mes projets",
+      loisirs: "Loisirs",
+      contact: "Contactez-moi",
+    },
+    en: {
+      about: "About me",
+      projects: "My projects",
+      loisirs: "Hobbies",
+      contact: "Contact me",
+    },
+  };
+
+  const t = navTexts[lang];
+
   const navItems = [
-    { name: "Qui suis-je", link: "#About", icon: "ri-heart-2-fill" },
-    { name: "Mes projets", link: "#Projets" },
-    { name: "Contactez-moi", link: "#Contact", icon: "ri-bear-smile-fill" }
+    { name: t.about, link: "#About", icon: "ri-heart-2-fill" },
+    { name: t.projects, link: "#Projets" },
+    { name: t.contact, link: "#Contact", icon: "ri-bear-smile-fill" },
   ];
 
   return (
     <section>
       <div className="navbar">
         
-        {/* --- SECTION LOGO --- */}
+        {/* --- 1. SECTION LOGO --- */}
         <div className="logo">
           <a className="link" href="/">
             <img 
@@ -33,23 +47,23 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* --- SECTION LOISIRS (Vers la page type réseau social) --- */}
+        {/* --- 2. BOUTON LOISIRS --- */}
         <div className="categories">
           <ul>
             <li className="nav_item">
-              <a className="link" href="/Loisirs"> 
-                <i className="ri-layout-grid-fill"></i> Loisirs
+              <a className="link" href="#Loisirs"> 
+                <i className="ri-layout-grid-fill"></i> {t.loisirs}
               </a>
             </li>
           </ul>
         </div>
 
-        {/* --- BOUTON MENU MOBILE --- */}
+        {/* --- 3. BOUTON MENU MOBILE --- */}
         <span className="mobile_menu" onClick={menuToggle}>
           <i className="ri-menu-line"></i>
         </span>
 
-        {/* --- LIENS DE NAVIGATION PRINCIPAUX --- */}
+        {/* --- 4. LIENS DE NAVIGATION PRINCIPAUX --- */}
         <ul className="nav-links" ref={menuRef}>
           {navItems.map((item) => (
             <li className="nav_item" key={item.name}>
@@ -58,8 +72,13 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <li>
-            <i className="ri-search-eye-line"></i>
+
+          {/* --- 5. BOUTON DE BASCULE DE LANGUE TOUT À LA FIN DU MENU --- */}
+          <li className="nav_item lang-item-wrapper">
+            <button className="lang-toggle-btn" onClick={toggleLang} title="Changer de langue">
+              <i className="ri-global-line"></i>
+              <span>{lang === "fr" ? "EN" : "FR"}</span>
+            </button>
           </li>
         </ul>
         

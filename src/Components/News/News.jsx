@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./News.css";
 
-import cvFR from "../../FICHIER/CV_FofanaMariama_StageData.pdf"; 
-import cvEN from "../../FICHIER/CV_FofanaMariama-Internship .pdf";
+import cvFR from "../../FICHIER/CV Stage/CV_FofanaMariama_StageData.pdf";
+import cvEN from "../../FICHIER/CV Stage/CV_FofanaMariama-Internship .pdf";
 
-const News = () => {
-  const msgFR = "🎯 Je suis actuellement à la recherche d'un stage de 6 mois à l'étranger en Data Science & IA, à partir de Janvier.";
-  const msgEN = "🎯 I am currently looking for a 6-month internship abroad in Data Science & AI, starting in January.";
+const News = ({ lang = "fr" }) => {
+  const msgFR = "🎯 Je suis actuellement à la recherche d'un stage de 4 à 5 mois à l'étranger en Data Science & IA, à partir de Septembre.";
+  const msgEN = "🎯 I am currently looking for a 4 to 5-month internship abroad in Data Science & AI, starting in September.";
 
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -20,27 +20,27 @@ const News = () => {
 
   return (
     <section className="news">
-      <p className="news-message" key={animationKey}>
+      <div className="news-container" key={animationKey}>
         
-        {/* --- BLOC FRANÇAIS --- */}
-        <span className="lang-block">
-          {msgFR}{" "}
-          <a href={cvFR} download="CV_Mariama_Fofana_FR.pdf" className="news-link">
-            📄 CV (FR)
-          </a>
-        </span>
+        {lang === "fr" ? (
+          /* --- BLOC FRANÇAIS --- */
+          <span className="lang-block">
+            {msgFR}{" "}
+            <a href={cvFR} download="CV_Mariama_Fofana_FR.pdf" className="news-link">
+              📄 Télécharger le CV (FR)
+            </a>
+          </span>
+        ) : (
+          /* --- BLOC ANGLAIS --- */
+          <span className="lang-block">
+            {msgEN}{" "}
+            <a href={cvEN} download="CV_Mariama_Fofana_EN.pdf" className="news-link">
+              📄 Download Resume (EN)
+            </a>
+          </span>
+        )}
 
-        <span className="separator"> &nbsp;&nbsp;|&nbsp;&nbsp; </span>
-
-        {/* --- BLOC ANGLAIS --- */}
-        <span className="lang-block">
-          {msgEN}{" "}
-          <a href={cvEN} download="CV_Mariama_Fofana_EN.pdf" className="news-link">
-            📄 CV (EN)
-          </a>
-        </span>
-
-      </p>
+      </div>
     </section>
   );
 };

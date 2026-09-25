@@ -1,46 +1,14 @@
-:root {
-  /* Couleurs */
-  --background-color: #c7b055;
-  --primary-color: #ffffff;
-  --gradient-color: linear-gradient(to-right, hsl(187, 85%, 43%), hsl(182, 25%, 50%));
-  --gold-light: #b37b00;
-  --gold-medium: #bf8600;
-  --gold-dark: #cb9000;
-  --gold-bright: #fcba3a;
-  --black-dark: #000000;
-  --black-medium: #453312;
-  --black-light: #261d0d;
-  --accent-color: #f29309;
-  --gold-very :  #fce5c4;
-
-  /* Cartes */
-  --card-radius: 0.75rem;
-  --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-  /* Typographie */
-  --font-small: 0.85rem;
-  --font-medium: 1rem;
-  --font-large: 1.2rem;
-  --font-xlarge: 2rem;
-
-  /* Espacements */
-  --gap-small: 0.5rem;
-  --gap-medium: 1rem;
-  --gap-large: 2rem;
-}
-
-/* Conteneur principal */
+/* =========== 2. LAYOUT GLOBAL & NAVIGATION (TABS) ===== */
 .container-wrapper {
   min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: var(--primary-color);
-  font-family: "Montserrat", sans-serif;
+  background: var(--PrimaryColor);
+  font-family: "Merriweather", serif;
 }
 
-/* Conteneur des onglets */
 .container {
   display: flex;
   flex-direction: column;
@@ -49,290 +17,1062 @@
   margin: 0 auto;
 }
 
-/* Liste des onglets */
+.tabs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .tabs-list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: var(--gap-medium);
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tabs-list button {
-  background: var(--gold-light);
-  color: var(--primary-color);
-  border: none;
-  border-radius: var(--card-radius);
-  padding: 0.5rem 1rem;
+  background: var(--or3);
+  color: var(--PrimaryColor);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .tabs-list button:hover,
 .tabs-list button[data-state="active"] {
-  background: var(--gold-bright);
+  background: var(--or3);
   transform: translateY(-3px);
+  color: var(--black3);
+  box-shadow: 0 0 15px rgba(237, 184, 7, 0.4);
 }
 
-/* Conteneur de contenu */
 .content-container {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-large);
+  gap: 2rem;
 }
 
-/* Cartes communes */
-.tabs-content .experience-item,
-.tabs-content .education-item,
-.skills-item,
-.association-item,
-.about-item {
-  background-color: var(--gold-very);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: 1.2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+
+/* ======= 3. STYLE ONGLET : EXPÉRIENCES PROFESSIONNELLES (Timeline & Stats) ======== */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(237, 184, 7, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(237, 184, 7, 0.12) 0%, transparent 45%);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-.tabs-content .experience-item:hover,
-.tabs-content .education-item:hover,
-.skills-item:hover,
-.association-item:hover,
-.about-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* Titres */
-.experience-title,
-.education-title,
-.skills-title,
-.association-title,
-.about-title {
-  font-size: var(--font-xlarge);
-  font-weight: 900;
-  color: var(--black-dark);
+.experience-header-center {
   text-align: center;
-  margin-bottom: var(--gap-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Descriptions */
-.experience-description,
-.education-description,
-.skills-description,
-.association-description,
-.about-description {
+.experience-title-main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #111111;
+}
+
+.experience-title-main span {
+  color: #edb807;
+}
+
+.experience-description {
+  font-size: 0.95rem;
+  color: #555555;
+  max-width: 650px;
+  text-align: center;
+}
+
+.experience-main-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.experience-stats-panel {
+  background: linear-gradient(145deg, #16130e 0%, #0f0d0a 100%);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.exp-panel-icon {
+  width: 55px;
+  height: 55px;
+  background: rgba(237, 184, 7, 0.1);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #edb807;
+  font-size: 1.4rem;
+}
+
+.exp-stat-block h4 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #edb807;
+  margin: 0;
+}
+
+.exp-stat-block p {
+  font-size: 0.85rem;
+  color: #c4beb3;
+  margin: 0.2rem 0 0 0;
+}
+
+.exp-divider {
+  width: 50px;
+  height: 1px;
+  background: rgba(237, 184, 7, 0.2);
+}
+
+.exp-timeline-wrapper {
+  position: relative;
+  max-height: 580px;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.exp-timeline-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.exp-timeline-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.exp-timeline-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(237, 184, 7, 0.3);
+  border-radius: 10px;
+}
+
+.experience-timeline-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-timeline-list::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 145px;
+  width: 2px;
+  background: linear-gradient(to bottom, #edb807, rgba(237, 184, 7, 0.2));
+}
+
+.experience-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.exp-date-box {
+  width: 125px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-date {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #b88a00;
+}
+
+.timeline-badge-type {
+  font-size: 0.68rem;
+  color: #777777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 3px solid #edb807;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(237, 184, 7, 0.3);
+}
+
+.timeline-card {
+  flex: 1;
+  background: #fbf9f4;
+  border: 1px solid rgba(237, 184, 7, 0.25);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+}
+
+.timeline-card:hover {
+  border-color: #edb807;
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(237, 184, 7, 0.15);
+  background: #ffffff;
+}
+
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.timeline-position {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111111; /* Corrigé ici (suppression de "black-dark") */
+  margin: 0;
+}
+
+.timeline-company {
+  font-size: 0.88rem;
+  color: #b88a00;
+  font-weight: 700;
+  margin: 0.2rem 0 0 0;
+}
+
+.timeline-location {
+  font-size: 0.78rem;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.timeline-missions-block {
+  margin-top: 0.8rem;
+  border-top: 1px solid rgba(237, 184, 7, 0.15);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.missions-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b88a00;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.missions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.missions-list li {
+  font-size: 0.82rem;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missions-list li i {
+  color: #edb807;
+  font-size: 0.9rem;
+}
+
+
+/* ======= 4. STYLE ONGLET : FORMATIONS (Timeline & 2 Colonnes) ========== */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(250, 192, 2, 0.12) 0%, transparent 25%),
+    radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.06) 0%, transparent 30%);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+}
+
+.education-header-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #111111;
+}
+
+.education-title span {
+  color: #edb807;
+}
+
+.education-description {
+  font-size: 0.95rem;
+  color: #555555;
+  max-width: 600px;
+  text-align: center;
+}
+
+.education-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-height: 580px;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.timeline-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.timeline-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+.timeline-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(237, 184, 7, 0.4);
+  border-radius: 10px;
+}
+
+.education-timeline-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-timeline-list::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 115px;
+  width: 2px;
+  background: linear-gradient(to bottom, #edb807, rgba(237, 184, 7, 0.2));
+}
+
+.education-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.education-container .timeline-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.timeline-logo-container {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  background: #ffffff;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.timeline-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-logo-container i {
+  font-size: 2rem;
+  color: #edb807;
+}
+
+.timeline-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline-diplome {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111111;
+  margin: 0;
+}
+
+.timeline-ecole {
+  font-size: 0.88rem;
+  color: #b88a00;
+  font-weight: 700;
+  margin: 0;
+}
+
+.timeline-spec {
+  font-size: 0.82rem;
+  color: #555555;
+  margin: 0;
+}
+
+.timeline-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.timeline-tag {
+  background: rgba(237, 184, 7, 0.12);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  color: #333333;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.education-objective-panel {
+  background: #fbf9f4;
+  border: 1px solid rgba(237, 184, 7, 0.4);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.objective-icon-top {
+  color: #edb807;
+  font-size: 1.5rem;
+  background: rgba(237, 184, 7, 0.12);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+}
+
+.education-objective-panel h4 {
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  color: #b88a00;
+  margin: 0;
+  font-weight: 800;
+}
+
+.objective-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.objective-step-item {
+  background: #ffffff;
+  border: 1px solid rgba(237, 184, 7, 0.25);
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  color: #111111;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.objective-step-item i {
+  color: #edb807;
+  font-size: 1.2rem;
+}
+
+.objective-arrow {
+  color: #edb807;
+  font-size: 1.1rem;
+}
+
+.education-stats-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  background: #fbf9f4;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.edu-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.edu-stat-item i {
+  font-size: 2rem;
+  color: #edb807;
+}
+
+.edu-stat-info h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111111;
+  margin: 0;
+}
+
+.edu-stat-info p {
+  font-size: 0.78rem;
+  color: #555555;
+  margin: 0;
+}
+
+
+/* ======= 5. STYLE ONGLET : ASSOCIATIONS & CERTIFICATS ========== */
+.association-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+  background-color: #0e0d0b;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(237, 184, 7, 0.1) 0%, transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(237, 184, 7, 0.05) 0%, transparent 40%);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 184, 7, 0.2);
+}
+
+.association-header-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.association-title-main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.association-title-main span {
+  color: #edb807;
+}
+
+.association-description {
+  font-size: 0.95rem;
+  color: #b8b2a7;
   max-width: 700px;
-  margin: 0 auto var(--gap-medium);
-  color: var(--black-medium);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.association-carousel-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.association-carousel-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.association-carousel-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.association-carousel-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(237, 184, 7, 0.3);
+  border-radius: 10px;
+}
+
+.association-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 2rem;
+  padding: 0.5rem;
+}
+
+.association-card {
+  background: linear-gradient(145deg, #16130e 0%, #0f0d0a 100%);
+  border: 1px solid rgba(237, 184, 7, 0.25);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 320px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.association-card:hover {
+  border-color: #edb807;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(237, 184, 7, 0.15);
+}
+
+.asso-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+.asso-icon-circle {
+  width: 50px;
+  height: 50px;
+  background: rgba(237, 184, 7, 0.1);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #edb807;
+  font-size: 1.3rem;
+}
+
+.asso-org-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.asso-role-badge {
+  background: rgba(237, 184, 7, 0.12);
+  color: #edb807;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.asso-desc {
+  font-size: 0.82rem;
+  color: #c4beb3;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+.asso-middle-info {
+  text-align: center;
+}
+
+.asso-location {
+  font-size: 0.78rem;
+  color: #999184;
+}
+
+.asso-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #edb807;
+  font-weight: 600;
+  border-top: 1px solid rgba(237, 184, 7, 0.15);
+  padding-top: 0.8rem;
+  width: 100%;
+}
+
+/* Bouton global pour ouvrir les certificats */
+.global-certificates-btn {
+  margin-top: 1rem;
+  background: rgba(237, 184, 7, 0.15);
+  color: var(--or3);
+  border: 1px solid var(--or3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.global-certificates-btn:hover {
+  background: var(--or3);
+  color: var(--PrimaryColor);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(237, 184, 7, 0.3);
+}
+
+/* Style de la modale des certificats */
+.certif-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.certif-modal-content {
+  background: var(--PrimaryColor);
+  border: 1px solid rgba(237, 184, 7, 0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.certif-modal-content .modal-subtitle {
+  font-size: 0.85rem;
+  color: var(--black2);
+  margin-bottom: 1.5rem;
+}
+
+.certificates-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.certificate-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--fond2);
+  border: 1px solid rgba(237, 184, 7, 0.2);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--black3);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.certificate-item-link i:first-child {
+  color: var(--or3);
+  font-size: 1.2rem;
+}
+
+.certificate-item-link:hover {
+  border-color: var(--or3);
+  background: rgba(237, 184, 7, 0.05);
+  transform: translateX(4px);
+}
+
+
+/* ======= 6. STYLE ONGLET : COMPÉTENCES ========== */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 184, 7, 0.3);
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #111111;
+  text-align: center;
+}
+
+.skills-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555555;
   text-align: center;
   line-height: 1.4;
 }
 
-/* Listes */
-.experience-list,
-.education-list,
-.skills-grid,
-.association-grid,
-.about-list {
-  display: grid;
-  gap: var(--gap-medium);
-}
-
-/* Expérience & Formation */
-.experience-item, .education-item {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--gap-small);
-}
-
-.experience-duration,
-.education-duration {
-  color: var(--accent-color);
-  font-weight: bold;
-  margin-bottom: var(--gap-small);
-  font-size: var(--font-small);
-}
-
-.experience-description-item,
-.experience-location,
-.education-description-item,
-.education-location {
-  font-size: var(--font-small);
-  color: var(--black-medium);
-  text-align: center;
-}
-
-.experience-position,
-.education-diplome {
-  color: var(--black-dark);
-  font-weight: 700;
-  font-size: var(--font-large);
-  margin-bottom: var(--gap-small);
-}
-
-.company-info,
-.education-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap-small);
-}
-
-.company-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-}
-
-/* About / Associations */
-.about-item,
-.association-item {
-  text-align: center;
-}
-
-.about-fieldName {
-  font-weight: bold;
-  font-size: var(--font-small);
-  margin-bottom: var(--gap-small);
-}
-
-.about-fieldValue {
-  font-size: var(--font-small);
-  color: var(--black-medium);
-}
-
-.association-nom,
-.association-position {
-  font-weight: 600;
-  font-size: var(--font-medium);
-}
-
-.association-lieu,
-.association-duration,
-.association-role {
-  font-size: var(--font-small);
-  color: var(--black-medium);
-}
-
-/* Scroll horizontal pour les grids larges sur mobile */
-.association-grid {
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-
 .skills-category-block {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .skills-category {
   font-weight: 700;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  text-align: left;
+  margin-bottom: 1rem;
+  color: #111111;
+  border-left: 4px solid #edb807;
+  padding-left: 10px;
 }
 
 .skills-category-items {
   display: flex;
-  flex-wrap: nowrap;     
-  gap: 15px;              
-  overflow-x: auto;       
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
   padding-bottom: 0.5rem;
 }
 
 .skills-item {
-  background-color: var(--primary-color);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: 10px 15px;
+  background-color: #fbf9f4;
+  border: 1px solid rgba(237, 184, 7, 0.25);
+  border-radius: 12px;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 120px;      
+  min-width: 130px;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.skills-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(237, 184, 7, 0.2);
+  border-color: #edb807;
+}
+
 .skills-item i {
-  font-size: 3rem; 
-} 
-.skill-icon {
-  font-size: 3rem;   /* taille */
-  color: #2C2255;    /* couleur */
-  transition: transform 0.2s;
+  font-size: 2.5rem;
+  color: #edb807;
 }
 
-.skill-icon:hover {
-  transform: scale(1.2); /* effet hover */
+.skills-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+  text-align: center;
 }
 
-/* ===== Desktop (grands écrans ≥1024px) ===== */
-@media (min-width: 1024px) {
-  .experience-list,
-  .education-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
-  }
 
-  .about-list {
-    grid-template-columns: repeat(3, 1fr); /* 2 cartes par ligne, tu peux changer en 3 si tu veux */
-  }
+/* ======= 7. STYLE ONGLET : PROFIL & COORDONNÉES (À propos) ========== */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2.5rem;
+  background-color: #0b0b0a;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(237, 184, 7, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 20% 90%, rgba(237, 184, 7, 0.05) 0%, transparent 50%);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(237, 184, 7, 0.25);
+}
 
-  .association-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
+.about-header-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-title-main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.about-title-main span {
+  color: #edb807;
+}
+
+.about-description {
+  font-size: 0.95rem;
+  color: #b8b2a7;
+  max-width: 650px;
+  text-align: center;
+}
+
+.about-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-info-card {
+  background: linear-gradient(145deg, #16130e 0%, #0f0d0a 100%);
+  border: 1px solid rgba(237, 184, 7, 0.2);
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-info-card:hover {
+  border-color: #edb807;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(237, 184, 7, 0.15);
+  background: linear-gradient(145deg, #1c1811, #13100c);
+}
+
+.about-card-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background: rgba(237, 184, 7, 0.1);
+  border: 1px solid rgba(237, 184, 7, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #edb807;
+  font-size: 1.2rem;
+}
+
+.about-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-field-name {
+  font-size: 0.75rem;
+  color: #999184;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.about-field-value {
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.about-footer-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.contact-direct-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #edb807;
+  color: #0b0b0a;
+  border: 1px solid #edb807;
+  padding: 0.85rem 2.2rem;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(237, 184, 7, 0.3);
+}
+
+.contact-direct-btn:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #edb807;
+  box-shadow: 0 0 25px rgba(237, 184, 7, 0.5);
+  transform: translateY(-2px);
+}
+
+
+/* ============= 8. RESPONSIVE DESIGN GLOBAL ============= */
+@media (max-width: 1024px) {
+  .education-main-layout {
+    grid-template-columns: 1fr;
+  }
+  .education-stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .association-grid-cards {
+    grid-template-columns: repeat(4, 260px);
+  }
+  .about-grid-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ===== Tablette (768px ≤ largeur < 1024px) ===== */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .experience-list,
-  .education-list,
-  .about-list,
-  .association-grid {
-    grid-template-columns: 1fr; /* 1 carte par ligne sur tablette */
-  }
-}
-
-/* ===== Mobile (≤768px) ===== */
 @media (max-width: 768px) {
-  .experience-list,
-  .education-list,
-  .about-list {
-    grid-template-columns: 1fr; /* 1 carte par ligne */
+  .container-wrapper {
+    padding: 1rem;
   }
-
-  .association-grid {
-    grid-template-columns: 1fr; /* 1 carte par ligne */
-    overflow-x: auto; /* si tu veux scroll horizontal, tu peux laisser repeat(auto-fill, minmax(150px, 1fr)) */
+  .education-stats-banner {
+    grid-template-columns: 1fr;
   }
-
-  .skills-grid,
-  .skills-category-items {
-    overflow-x: auto; /* scroll horizontal pour les compétences */
-  }
-
-  .experience-item,
-  .education-item,
-  .about-item,
-  .association-item,
-  .skills-item {
-    padding: 0.8rem;
-  }
-
-  .experience-title,
-  .education-title,
-  .skills-title,
-  .association-title,
-  .about-title {
-    font-size: 1.3rem;
-  }
-
-  .experience-description,
-  .education-description,
-  .skills-description,
-  .association-description,
-  .about-description {
-    font-size: 0.85rem;
-    line-height: 1.3;
+  .about-grid-cards {
+    grid-template-columns: 1fr;
   }
 }
