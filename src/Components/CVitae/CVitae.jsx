@@ -115,9 +115,10 @@ const CVitae = ({ lang = "fr" }) => {
                
                {/* En-tête */}
                <div className="experience-header-center">
-                 <h3 className="experience-title-main">
-                   {currentExp.title.split(",")[0]}, <span className="highlight-text">{currentExp.title.split(",")[1] || "votre valeur"}</span>
-                 </h3>
+                <h3 className="experience-title-main">
+  {lang === "fr" ? "Mon expérience, " : "My experience, "}
+  <span className="highlight-text">{lang === "fr" ? "votre valeur" : "your value"}</span>
+</h3>
                  <p className="experience-description">
                    {currentExp.description}
                  </p>
@@ -206,14 +207,13 @@ const CVitae = ({ lang = "fr" }) => {
                 
                 {/* En-tête */}
                 <div className="education-header-center">
-                  <h3 className="education-title">
-                    {currentEdu.title.includes("parcours") ? "Mon parcours " : "My academic "}
-                    <span className="highlight-text">{currentEdu.title.includes("parcours") ? "académique" : "background"}</span>
-                  </h3>
-                  <p className="education-description">
-                    {currentEdu.description}
-                  </p>
-                </div>
+    <h3 className="education-title">
+      {currentEdu.title}
+    </h3>
+    <p className="education-description">
+      {currentEdu.description}
+    </p>
+  </div>
 
                 {/* Layout en 2 colonnes (Timeline + Objectif 1/3) */}
                 <div className="education-main-layout">

@@ -1,5 +1,5 @@
 .loisirs-section-complete {
-    background: linear-gradient(135deg, var(--black1),  var(--black1),var(--black1),var(--black1), var(--PrimaryColor),var(--black1)); 
+  background: linear-gradient(135deg, var(--black1),  var(--black1),var(--black1),var(--black1), var(--PrimaryColor),var(--black1)); 
   padding: 3rem 1.5rem; 
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -104,10 +104,8 @@
   max-width: 1100px; 
   width: 100%;
   margin: 1rem auto 0;
-
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-
   align-items: center;
   gap: 3rem; 
 }
@@ -160,7 +158,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 1.5rem; /* Rapproché du texte */
+  margin-top: 1.5rem;
 }
 
 .dot {
@@ -195,6 +193,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .grid-mosaic-slant {
   width: 100%;
   max-width: 600px;
@@ -277,19 +276,19 @@
 .loisirs-footer-bottom {
   display: flex;
   justify-content: center;
-  margin-top: 1rem; /* Rapproché du centre */
+  margin-top: 1rem;
 }
 
 .quote-container-bottom {
   background: var(--or2);
   color: #ffffff;
-  padding: 1.2rem 2rem; /* Légèrement plus compact */
+  padding: 1.2rem 2rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 12px;
   box-shadow: 0 6px 20px rgba(237, 184, 7, 0.1);
-  max-width: 520px; /* Plus étroit */
+  max-width: 520px;
   width: 100%;
   text-align: center;
   border: 1px solid rgba(237, 184, 7, 0.25);
@@ -309,4 +308,78 @@
   color: #fcba3a;
   font-size: 1.1rem;
   flex-shrink: 0;
+}
+
+
+/* ========================================================== */
+/* ====== CORRECTIONS RESPONSIVES POUR MOBILES (< 768px) ====== */
+/* ========================================================== */
+
+@media screen and (max-width: 768px) {
+  .loisirs-section-complete {
+    padding: 2rem 1rem;
+  }
+
+  .loisirs-title-main {
+    font-size: 1.6rem;
+  }
+
+  .loisirs-subtitle-main {
+    font-size: 0.88rem;
+  }
+
+  /* Passage de la grille centrale en une seule colonne sur mobile */
+  .loisirs-body-middle {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .slide-title {
+    font-size: 1.4rem;
+  }
+
+  .slide-description,
+  .loisirs-anecdote-box p {
+    font-size: 0.85rem;
+  }
+
+  /* Transformation de la mosaïque inclinée en une grille propre et nette sur mobile */
+  .grid-mosaic-slant {
+    transform: none; /* Annule la rotation penchée pour un affichage bien droit */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de photos */
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  /* Annulation des décalages complexes et des hauteurs en pixels sur mobile */
+  .mosaic-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    transform: none !important;
+    height: 140px; /* Hauteur fixe et propre pour chaque photo sur mobile */
+    border-radius: 10px;
+  }
+
+  /* Permet à la 3ème image de s'étaler joliment sur toute la largeur si besoin */
+  .mosaic-card:nth-child(3) {
+    grid-column: span 2 !important;
+    height: 150px;
+  }
+
+  .circle-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .quote-container-bottom {
+    padding: 1rem;
+  }
+
+  .quote-container-bottom p {
+    font-size: 0.82rem;
+  }
 }

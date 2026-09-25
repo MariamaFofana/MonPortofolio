@@ -1076,3 +1076,116 @@
     grid-template-columns: 1fr;
   }
 }
+/* ========================================================== */
+/* ====== CORRECTIONS RESPONSIVES FINALES (MOBILES < 768px) == */
+/* ========================================================== */
+
+@media screen and (max-width: 768px) {
+  /* 1. Ajustement général des conteneurs d'onglets pour s'adapter aux petits écrans */
+  .experience-container,
+  .education-container,
+  .association-container,
+  .skills-container,
+  .about-container {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .experience-title-main,
+  .education-title,
+  .association-title-main,
+  .skills-title,
+  .about-title-main {
+    font-size: 1.8rem !important;
+  }
+
+  /* 2. Expériences : Passer le layout principal en une seule colonne sur mobile */
+  .experience-main-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .experience-stats-panel {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    padding: 1.2rem 1rem !important;
+  }
+
+  .exp-divider {
+    width: 1px !important;
+    height: 30px !important;
+  }
+
+  .exp-stat-block h4 {
+    font-size: 1.4rem !important;
+  }
+
+  /* Ligne de timeline verticale repositionnée proprement sur mobile */
+  .experience-timeline-list::before {
+    left: 20px !important;
+  }
+
+  .experience-timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding-left: 35px !important;
+  }
+
+  .exp-date-box {
+    width: 100% !important;
+    text-align: left !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  .experience-timeline-item .timeline-dot {
+    position: absolute !important;
+    left: 14px !important;
+    top: 5px !important;
+  }
+
+  .timeline-card {
+    width: 100% !important;
+  }
+
+
+  /* 3. Formations : Passer le layout en une colonne + adapter le panneau objectif */
+  .education-main-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .education-timeline-list::before {
+    left: 20px !important;
+  }
+
+  .education-timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding-left: 35px !important;
+  }
+
+  .education-timeline-item .timeline-dot {
+    position: absolute !important;
+    left: 14px !important;
+    top: 5px !important;
+  }
+
+  .education-container .timeline-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+
+  .education-objective-panel {
+    width: 100% !important;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .education-stats-banner {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+  }
+}
